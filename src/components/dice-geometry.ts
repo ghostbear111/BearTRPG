@@ -130,4 +130,3 @@ export function readDiceValue(shape: DiceShape, sides: number, rotation: { x: nu
   })
   return result
 }
-

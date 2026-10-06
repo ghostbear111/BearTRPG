@@ -311,5 +311,3 @@ export function ObjectVisual({ object, size, shape }: { object: TableObject; siz
   if (PROP_MODELS.some(([key]) => key === object.metadata.model)) return <KitProp object={object} size={size} />
   return <mesh castShadow receiveShadow><boxGeometry args={size} /><meshStandardMaterial color={object.color} roughness={.85} metalness={.03} /></mesh>
 }
-
-
