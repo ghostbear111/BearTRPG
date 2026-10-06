@@ -23,7 +23,7 @@ npm start
 
 ## 在线编辑器
 
-入口：[熊酒馆纯净桌游编辑器](https://ghostbear111.github.io/BearTRPG-Play/editor/)
+入口：[熊酒馆纯净桌游编辑器](https://ghostbear111.github.io/BearTRPG/)
 
 `npm run build:pages` 生成 `artifacts/pages-editor/`，可部署在 HTTPS 静态网站的任意子目录。在线版首次打开同样为空白桌面，游戏库没有预装剧情，不包含《星海群侠传》。基础棋子、骰子和道具模板保持可用。
 
@@ -31,7 +31,7 @@ npm start
 
 在线版的数据属于当前设备和浏览器，清理站点数据会清除这些内容，请用导出功能备份。在线版不提供云同步和服务器模型代理；AI 主持需本机版或独立后台。
 
-BearTRPG 源码仓库保持私有。为了沿用免费静态部署，仅将构建网页发布到公开的 BearTRPG-Play 站点的 `editor/` 目录，不发布源码仓库的服务器、测试或本机数据库。更新在线版时运行 `npm run build:pages`，更新发布仓库 `site/editor/` 后提交推送，既有 Pages workflow 会自动发布。
+本仓库通过 GitHub Actions 自动构建并部署到 GitHub Pages。提交到 `main` 分支后，`Deploy BearTRPG editor` 工作流会执行 `npm ci` 和 `npm run build:pages`，仅发布 `artifacts/pages-editor/` 中的静态网页；也可在 Actions 中手动运行。服务器代码、测试和本机数据库不会进入网页部署包。Pages 的发布来源设为 **GitHub Actions**。
 
 ## 创作与游玩
 
@@ -61,5 +61,3 @@ BearTRPG 源码仓库保持私有。为了沿用免费静态部署，仅将构�
 | `public/modules/bear-tavern/` | 角色卡与文字 APNG 工具 |
 | `public/assets/` | 可自定义的骰面与基础视觉素材 |
 | `tests/` | 测试数据与浏览器验证页面 |
-
-参照 Tabletop Simulator 的通用桌面思路开发，目前面向本机单人或同桌多人，支持自定义内容包。TTS 原版存档、Lua 脚本与 Workshop 模组需要另行适配。
