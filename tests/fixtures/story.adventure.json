@@ -1,0 +1,2240 @@
+{
+  "format": "realm-adventure",
+  "version": 1,
+  "definition": {
+    "schemaVersion": 1,
+    "id": "builtin-starfall",
+    "revision": 2,
+    "title": "星陨纪元：黎明之盟",
+    "summary": "灰港、星塔与世界裂隙。三章七场景的原创分支战役，可以改写为你的长篇 RPG。",
+    "world": {
+      "premise": "七年前，一颗星辰坠入北境。城市失去昼夜的界线，而你们受邀寻找能关闭世界裂隙的星核。",
+      "history": "旧帝国在星陨后瓦解。灰港由商会维持秩序，星塔学者寻找碎片，守林人保护被污染的土地。",
+      "factions": "灰港商会：重建贸易，希望低风险。\n星塔议会：重视知识，愿意付出代价。\n守林盟约：保护生灵，反对再次使用星核。",
+      "tone": "史诗奇幻、合作探索、道德选择；危险可以预告，失败推动故事。",
+      "gmNotes": "裂隙来自一次失控的修复仪式。主持人逐渐揭示真相，不要提前透露后续章节。示例检定规则独立于官方规则书。"
+    },
+    "rules": {
+      "name": "自定义叙事 RPG",
+      "minPlayers": 1,
+      "maxPlayers": 4,
+      "partyDefeat": true
+    },
+    "chapters": [
+      {
+        "id": "6b9e3c23-687f-400a-846f-0cb10bc0c27c",
+        "title": "灰港的余烬",
+        "summary": "组建队伍，寻找失落星核。"
+      },
+      {
+        "id": "12e75a9f-0150-44a2-96e6-ff18181042f5",
+        "title": "星塔的盟约",
+        "summary": "穿越石门，决定是否争取盟友。"
+      },
+      {
+        "id": "bdc80ea8-6e98-4b08-b5a6-0d0ee3801c3d",
+        "title": "黎明的代价",
+        "summary": "面对裂隙，在希望与风险间作出选择。"
+      }
+    ],
+    "characters": [
+      {
+        "id": "64d4d7b1-9a70-4d11-a892-bf8ac5dd98d9",
+        "name": "岚 · 远行者",
+        "role": "player",
+        "description": "从灰港出发的斥候，擅长观察，想找回失踪的家人。",
+        "secret": "家人的最后线索指向星塔。",
+        "maxHp": 6,
+        "color": "#7eabb2",
+        "appearance": {
+          "id": "starfall-character-0",
+          "kind": "figurine",
+          "name": "游侠",
+          "position": [
+            0,
+            0.7,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "color": "#688b70",
+          "locked": false,
+          "faceDown": false,
+          "value": 0,
+          "sides": 0,
+          "texture": "",
+          "backTexture": "",
+          "description": "游侠棋子，支持生命记录、状态标记及自定义肖像。",
+          "metadata": {
+            "model": "ranger",
+            "vitality": 6
+          }
+        }
+      },
+      {
+        "id": "368ad730-511d-4693-ab88-89f1ccca7fed",
+        "name": "烛 · 星术师",
+        "role": "player",
+        "description": "年轻的星术师，相信星核能够修复世界。",
+        "secret": "导师曾参加失控仪式。",
+        "maxHp": 6,
+        "color": "#c99475",
+        "appearance": {
+          "id": "starfall-character-1",
+          "kind": "figurine",
+          "name": "法师",
+          "position": [
+            0,
+            0.7,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "color": "#8778ac",
+          "locked": false,
+          "faceDown": false,
+          "value": 0,
+          "sides": 0,
+          "texture": "",
+          "backTexture": "",
+          "description": "法师棋子，支持生命记录、状态标记及自定义肖像。",
+          "metadata": {
+            "model": "mage",
+            "vitality": 6
+          }
+        }
+      },
+      {
+        "id": "f98733ea-5e15-466e-9cd9-8e2c97eb4ce1",
+        "name": "薇拉 · 守林使者",
+        "role": "npc",
+        "description": "守林人的使者，愿意帮助尊重自然的队伍。",
+        "secret": "她知道一条避开守卫的山路。",
+        "maxHp": 8,
+        "color": "#8fae96",
+        "appearance": {
+          "id": "starfall-character-2",
+          "kind": "figurine",
+          "name": "祭司",
+          "position": [
+            0,
+            0.7,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "color": "#c7ba8e",
+          "locked": false,
+          "faceDown": false,
+          "value": 0,
+          "sides": 0,
+          "texture": "",
+          "backTexture": "",
+          "description": "祭司棋子，支持生命记录、状态标记及自定义肖像。",
+          "metadata": {
+            "model": "cleric",
+            "vitality": 6
+          }
+        }
+      }
+    ],
+    "quests": [
+      {
+        "id": "star-core",
+        "title": "找回星核",
+        "description": "在松林遗迹找到关闭裂隙的关键。",
+        "initial": "active"
+      },
+      {
+        "id": "alliance",
+        "title": "取得盟友支持",
+        "description": "与守林人结盟，为最终仪式准备援助。",
+        "initial": "active"
+      },
+      {
+        "id": "seal",
+        "title": "封闭世界裂隙",
+        "description": "带着星核进入最后仪式，成功后返回黎明。",
+        "initial": "locked"
+      }
+    ],
+    "variables": [
+      {
+        "id": "hope",
+        "name": "世界希望",
+        "min": 0,
+        "max": 6,
+        "initial": 2
+      },
+      {
+        "id": "alarm",
+        "name": "危机",
+        "min": 0,
+        "max": 6,
+        "initial": 0
+      }
+    ],
+    "scenes": [
+      {
+        "id": "harbor",
+        "chapterId": "6b9e3c23-687f-400a-846f-0cb10bc0c27c",
+        "title": "灰港招募",
+        "description": "灰色潮水拍打栈桥。守林使者薇拉正在寻找愿意面对北境异变的人。她请你们先找回星核。",
+        "gmNotes": "根据队伍已经发生的选择叙述，不预判骰子；允许玩家描述行动，再使用对应按钮结算。",
+        "goal": "与使者交谈或直接出发。",
+        "ending": "none",
+        "cast": [
+          "f98733ea-5e15-466e-9cd9-8e2c97eb4ce1"
+        ],
+        "objects": [
+          {
+            "id": "starfall-harbor-prop-0",
+            "kind": "board",
+            "name": "港口木板地图",
+            "position": [
+              0,
+              0.05,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#838574",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可自由布置的港口木板地板，支持网格与自定义图片。",
+            "metadata": {
+              "surface": "port",
+              "width": 16,
+              "height": 0.1,
+              "depth": 12
+            }
+          },
+          {
+            "id": "starfall-harbor-prop-1",
+            "kind": "block",
+            "name": "宝箱",
+            "position": [
+              -5,
+              0.65,
+              -2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可以开启并取出物品，每个宝箱只能取物一次。",
+            "metadata": {
+              "model": "chest",
+              "behavior": "open",
+              "lootName": "恢复药剂",
+              "lootDescription": "使用后恢复一名角色的 2 点生命。",
+              "lootHeal": 2,
+              "width": 1.6,
+              "height": 1,
+              "depth": 1
+            }
+          },
+          {
+            "id": "starfall-harbor-prop-2",
+            "kind": "block",
+            "name": "火把",
+            "position": [
+              -6.5,
+              1.1,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可点燃或熄灭的火把。",
+            "metadata": {
+              "model": "torch",
+              "behavior": "light",
+              "width": 0.5,
+              "height": 2,
+              "depth": 0.5
+            }
+          },
+          {
+            "id": "starfall-harbor-prop-3",
+            "kind": "block",
+            "name": "火盆",
+            "position": [
+              6,
+              0.7,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可点燃或熄灭的火盆。",
+            "metadata": {
+              "model": "brazier",
+              "behavior": "light",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          },
+          {
+            "id": "starfall-harbor-prop-4",
+            "kind": "block",
+            "name": "桌子",
+            "position": [
+              0,
+              0.8,
+              -3
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的桌子，可以保存自己的版本。",
+            "metadata": {
+              "model": "table",
+              "width": 2.5,
+              "height": 1.3,
+              "depth": 1.5
+            }
+          },
+          {
+            "id": "starfall-harbor-prop-5",
+            "kind": "block",
+            "name": "木桶",
+            "position": [
+              5,
+              0.7,
+              -2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的木桶，可以保存自己的版本。",
+            "metadata": {
+              "model": "barrel",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          },
+          {
+            "id": "starfall-harbor-prop-6",
+            "kind": "block",
+            "name": "木箱",
+            "position": [
+              -3,
+              0.7,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的木箱，可以保存自己的版本。",
+            "metadata": {
+              "model": "crate",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          }
+        ],
+        "choices": [
+          {
+            "id": "fb50d1a2-785e-4f4c-b9ba-137dc6d1c3d1",
+            "label": "争取守林盟约",
+            "description": "",
+            "nextSceneId": "ruins",
+            "failureSceneId": "ruins",
+            "check": {
+              "sides": 20,
+              "target": 10,
+              "modifier": 2
+            },
+            "conditions": [],
+            "success": [
+              {
+                "type": "quest",
+                "id": "alliance",
+                "status": "completed"
+              },
+              {
+                "type": "variable",
+                "id": "hope",
+                "delta": 1
+              }
+            ],
+            "failure": [
+              {
+                "type": "variable",
+                "id": "alarm",
+                "delta": 1
+              }
+            ]
+          },
+          {
+            "id": "a8ab1bb6-567d-4ab3-87f6-919eab64b291",
+            "label": "直接前往松林",
+            "description": "",
+            "nextSceneId": "ruins",
+            "failureSceneId": "",
+            "check": null,
+            "conditions": [],
+            "success": [],
+            "failure": []
+          }
+        ]
+      },
+      {
+        "id": "ruins",
+        "chapterId": "6b9e3c23-687f-400a-846f-0cb10bc0c27c",
+        "title": "松林遗迹",
+        "description": "废墟中央的银色根系包裹着一枚星核。踩错石板会触发古老机关。",
+        "gmNotes": "根据队伍已经发生的选择叙述，不预判骰子；允许玩家描述行动，再使用对应按钮结算。",
+        "goal": "取得星核，再前往石门。",
+        "ending": "none",
+        "cast": [],
+        "objects": [
+          {
+            "id": "starfall-ruins-prop-0",
+            "kind": "board",
+            "name": "林地地图",
+            "position": [
+              0,
+              0.05,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#648062",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可自由布置的林地地板，支持网格与自定义图片。",
+            "metadata": {
+              "surface": "forest",
+              "width": 16,
+              "height": 0.1,
+              "depth": 12
+            }
+          },
+          {
+            "id": "starfall-ruins-prop-1",
+            "kind": "block",
+            "name": "宝箱",
+            "position": [
+              -5,
+              0.65,
+              -2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可以开启并取出物品，每个宝箱只能取物一次。",
+            "metadata": {
+              "model": "chest",
+              "behavior": "open",
+              "lootName": "恢复药剂",
+              "lootDescription": "使用后恢复一名角色的 2 点生命。",
+              "lootHeal": 2,
+              "width": 1.6,
+              "height": 1,
+              "depth": 1
+            }
+          },
+          {
+            "id": "starfall-ruins-prop-2",
+            "kind": "block",
+            "name": "火把",
+            "position": [
+              -6.5,
+              1.1,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可点燃或熄灭的火把。",
+            "metadata": {
+              "model": "torch",
+              "behavior": "light",
+              "width": 0.5,
+              "height": 2,
+              "depth": 0.5
+            }
+          },
+          {
+            "id": "starfall-ruins-prop-3",
+            "kind": "block",
+            "name": "火盆",
+            "position": [
+              6,
+              0.7,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可点燃或熄灭的火盆。",
+            "metadata": {
+              "model": "brazier",
+              "behavior": "light",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          },
+          {
+            "id": "starfall-ruins-prop-4",
+            "kind": "block",
+            "name": "树木",
+            "position": [
+              -5.5,
+              1.65,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#688367",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的树木，可以保存自己的版本。",
+            "metadata": {
+              "model": "tree",
+              "width": 1.7,
+              "height": 3,
+              "depth": 1.7
+            }
+          },
+          {
+            "id": "starfall-ruins-prop-5",
+            "kind": "block",
+            "name": "岩石",
+            "position": [
+              3.5,
+              0.7,
+              -3
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的岩石，可以保存自己的版本。",
+            "metadata": {
+              "model": "rock",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          },
+          {
+            "id": "starfall-ruins-prop-6",
+            "kind": "block",
+            "name": "水晶",
+            "position": [
+              0,
+              0.7,
+              -2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的水晶，可以保存自己的版本。",
+            "metadata": {
+              "model": "crystal",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          }
+        ],
+        "choices": [
+          {
+            "id": "005c0685-cd94-49ce-a329-6bfc79e95257",
+            "label": "辨识机关，取出星核",
+            "description": "",
+            "nextSceneId": "gate",
+            "failureSceneId": "ruins",
+            "check": {
+              "sides": 20,
+              "target": 10,
+              "modifier": 2
+            },
+            "conditions": [],
+            "success": [
+              {
+                "type": "quest",
+                "id": "star-core",
+                "status": "completed"
+              },
+              {
+                "type": "quest",
+                "id": "seal",
+                "status": "active"
+              }
+            ],
+            "failure": [
+              {
+                "type": "hp",
+                "id": "64d4d7b1-9a70-4d11-a892-bf8ac5dd98d9",
+                "delta": -1
+              },
+              {
+                "type": "variable",
+                "id": "alarm",
+                "delta": 1
+              }
+            ]
+          },
+          {
+            "id": "19425788-0df7-40af-8760-e07a16e6d347",
+            "label": "放弃星核，撤离北境",
+            "description": "",
+            "nextSceneId": "darkness",
+            "failureSceneId": "",
+            "check": null,
+            "conditions": [],
+            "success": [],
+            "failure": []
+          }
+        ]
+      },
+      {
+        "id": "gate",
+        "chapterId": "12e75a9f-0150-44a2-96e6-ff18181042f5",
+        "title": "石门岔路",
+        "description": "星塔的石门被巡逻者封锁。峡谷的小径更长，却能避开正面冲突。",
+        "gmNotes": "根据队伍已经发生的选择叙述，不预判骰子；允许玩家描述行动，再使用对应按钮结算。",
+        "goal": "选择进入星塔的路线。",
+        "ending": "none",
+        "cast": [],
+        "objects": [
+          {
+            "id": "starfall-gate-prop-0",
+            "kind": "board",
+            "name": "石砖地城地图",
+            "position": [
+              0,
+              0.05,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#838574",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可自由布置的石砖地城地板，支持网格与自定义图片。",
+            "metadata": {
+              "surface": "stone",
+              "width": 16,
+              "height": 0.1,
+              "depth": 12
+            }
+          },
+          {
+            "id": "starfall-gate-prop-1",
+            "kind": "block",
+            "name": "宝箱",
+            "position": [
+              -5,
+              0.65,
+              -2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可以开启并取出物品，每个宝箱只能取物一次。",
+            "metadata": {
+              "model": "chest",
+              "behavior": "open",
+              "lootName": "恢复药剂",
+              "lootDescription": "使用后恢复一名角色的 2 点生命。",
+              "lootHeal": 2,
+              "width": 1.6,
+              "height": 1,
+              "depth": 1
+            }
+          },
+          {
+            "id": "starfall-gate-prop-2",
+            "kind": "block",
+            "name": "火把",
+            "position": [
+              -6.5,
+              1.1,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可点燃或熄灭的火把。",
+            "metadata": {
+              "model": "torch",
+              "behavior": "light",
+              "width": 0.5,
+              "height": 2,
+              "depth": 0.5
+            }
+          },
+          {
+            "id": "starfall-gate-prop-3",
+            "kind": "block",
+            "name": "火盆",
+            "position": [
+              6,
+              0.7,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可点燃或熄灭的火盆。",
+            "metadata": {
+              "model": "brazier",
+              "behavior": "light",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          },
+          {
+            "id": "starfall-gate-prop-4",
+            "kind": "block",
+            "name": "门",
+            "position": [
+              0,
+              1.4,
+              -2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可开关的门。与机关设置相同的联动标签后，由机关控制。",
+            "metadata": {
+              "model": "door",
+              "behavior": "open",
+              "width": 1.6,
+              "height": 2.5,
+              "depth": 0.45,
+              "linkTag": "石门机关"
+            }
+          },
+          {
+            "id": "starfall-gate-prop-5",
+            "kind": "block",
+            "name": "机关拉杆",
+            "position": [
+              3,
+              0.7,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可以切换，联动同标签的门和灯。",
+            "metadata": {
+              "model": "lever",
+              "behavior": "switch",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25,
+              "linkTag": "石门机关"
+            }
+          },
+          {
+            "id": "starfall-gate-prop-6",
+            "kind": "block",
+            "name": "石柱",
+            "position": [
+              -5,
+              1.45,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的石柱，可以保存自己的版本。",
+            "metadata": {
+              "model": "pillar",
+              "width": 0.9,
+              "height": 2.6,
+              "depth": 0.9
+            }
+          }
+        ],
+        "choices": [
+          {
+            "id": "dde8535b-6a92-4e23-a1c6-c2b69881861a",
+            "label": "隐蔽穿过石门",
+            "description": "",
+            "nextSceneId": "alliance-hall",
+            "failureSceneId": "alliance-hall",
+            "check": {
+              "sides": 20,
+              "target": 12,
+              "modifier": 2
+            },
+            "conditions": [],
+            "success": [],
+            "failure": [
+              {
+                "type": "hp",
+                "id": "64d4d7b1-9a70-4d11-a892-bf8ac5dd98d9",
+                "delta": -1
+              }
+            ]
+          },
+          {
+            "id": "304f7bdf-9ac5-40e5-a3f7-8e8c3c0e7bfe",
+            "label": "绕行峡谷",
+            "description": "",
+            "nextSceneId": "alliance-hall",
+            "failureSceneId": "",
+            "check": null,
+            "conditions": [],
+            "success": [
+              {
+                "type": "variable",
+                "id": "alarm",
+                "delta": 1
+              }
+            ],
+            "failure": []
+          }
+        ]
+      },
+      {
+        "id": "alliance-hall",
+        "chapterId": "12e75a9f-0150-44a2-96e6-ff18181042f5",
+        "title": "星塔会盟",
+        "description": "学者要求立刻使用星核。守林人担心仪式再次失控。两方需要一个能被信任的承诺。",
+        "gmNotes": "根据队伍已经发生的选择叙述，不预判骰子；允许玩家描述行动，再使用对应按钮结算。",
+        "goal": "决定最后仪式的准备方式。",
+        "ending": "none",
+        "cast": [
+          "f98733ea-5e15-466e-9cd9-8e2c97eb4ce1"
+        ],
+        "objects": [
+          {
+            "id": "starfall-alliance-hall-prop-0",
+            "kind": "board",
+            "name": "石砖地城地图",
+            "position": [
+              0,
+              0.05,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#838574",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可自由布置的石砖地城地板，支持网格与自定义图片。",
+            "metadata": {
+              "surface": "stone",
+              "width": 16,
+              "height": 0.1,
+              "depth": 12
+            }
+          },
+          {
+            "id": "starfall-alliance-hall-prop-1",
+            "kind": "block",
+            "name": "宝箱",
+            "position": [
+              -5,
+              0.65,
+              -2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可以开启并取出物品，每个宝箱只能取物一次。",
+            "metadata": {
+              "model": "chest",
+              "behavior": "open",
+              "lootName": "恢复药剂",
+              "lootDescription": "使用后恢复一名角色的 2 点生命。",
+              "lootHeal": 2,
+              "width": 1.6,
+              "height": 1,
+              "depth": 1
+            }
+          },
+          {
+            "id": "starfall-alliance-hall-prop-2",
+            "kind": "block",
+            "name": "火把",
+            "position": [
+              -6.5,
+              1.1,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可点燃或熄灭的火把。",
+            "metadata": {
+              "model": "torch",
+              "behavior": "light",
+              "width": 0.5,
+              "height": 2,
+              "depth": 0.5
+            }
+          },
+          {
+            "id": "starfall-alliance-hall-prop-3",
+            "kind": "block",
+            "name": "火盆",
+            "position": [
+              6,
+              0.7,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可点燃或熄灭的火盆。",
+            "metadata": {
+              "model": "brazier",
+              "behavior": "light",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          },
+          {
+            "id": "starfall-alliance-hall-prop-4",
+            "kind": "block",
+            "name": "桌子",
+            "position": [
+              0,
+              0.8,
+              -3
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的桌子，可以保存自己的版本。",
+            "metadata": {
+              "model": "table",
+              "width": 2.5,
+              "height": 1.3,
+              "depth": 1.5
+            }
+          },
+          {
+            "id": "starfall-alliance-hall-prop-5",
+            "kind": "block",
+            "name": "木桶",
+            "position": [
+              5,
+              0.7,
+              -2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的木桶，可以保存自己的版本。",
+            "metadata": {
+              "model": "barrel",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          },
+          {
+            "id": "starfall-alliance-hall-prop-6",
+            "kind": "block",
+            "name": "木箱",
+            "position": [
+              -3,
+              0.7,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的木箱，可以保存自己的版本。",
+            "metadata": {
+              "model": "crate",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          }
+        ],
+        "choices": [
+          {
+            "id": "c22d55d4-9b9a-4578-8247-86f1b5979924",
+            "label": "召集盟友共同施术",
+            "description": "",
+            "nextSceneId": "ritual",
+            "failureSceneId": "",
+            "check": null,
+            "conditions": [
+              {
+                "type": "quest",
+                "id": "alliance",
+                "status": "completed"
+              }
+            ],
+            "success": [
+              {
+                "type": "variable",
+                "id": "hope",
+                "delta": 2
+              }
+            ],
+            "failure": []
+          },
+          {
+            "id": "965a77f7-73aa-49d4-815b-fdd0d38e97e0",
+            "label": "独自承担仪式",
+            "description": "",
+            "nextSceneId": "ritual",
+            "failureSceneId": "",
+            "check": null,
+            "conditions": [],
+            "success": [
+              {
+                "type": "variable",
+                "id": "hope",
+                "delta": -1
+              }
+            ],
+            "failure": []
+          }
+        ]
+      },
+      {
+        "id": "ritual",
+        "chapterId": "bdc80ea8-6e98-4b08-b5a6-0d0ee3801c3d",
+        "title": "裂隙仪式",
+        "description": "天空裂隙像一只缓缓睁开的眼睛。星核发出最后的脉冲；每次失败都会让队伍承受代价。",
+        "gmNotes": "根据队伍已经发生的选择叙述，不预判骰子；允许玩家描述行动，再使用对应按钮结算。",
+        "goal": "完成封闭仪式，或选择撤退。",
+        "ending": "none",
+        "cast": [],
+        "objects": [
+          {
+            "id": "starfall-ritual-prop-0",
+            "kind": "board",
+            "name": "仪式法阵地图",
+            "position": [
+              0,
+              0.05,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#838574",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可自由布置的仪式法阵地板，支持网格与自定义图片。",
+            "metadata": {
+              "surface": "ritual",
+              "width": 16,
+              "height": 0.1,
+              "depth": 12
+            }
+          },
+          {
+            "id": "starfall-ritual-prop-1",
+            "kind": "block",
+            "name": "宝箱",
+            "position": [
+              -5,
+              0.65,
+              -2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可以开启并取出物品，每个宝箱只能取物一次。",
+            "metadata": {
+              "model": "chest",
+              "behavior": "open",
+              "lootName": "恢复药剂",
+              "lootDescription": "使用后恢复一名角色的 2 点生命。",
+              "lootHeal": 2,
+              "width": 1.6,
+              "height": 1,
+              "depth": 1
+            }
+          },
+          {
+            "id": "starfall-ritual-prop-2",
+            "kind": "block",
+            "name": "火把",
+            "position": [
+              -6.5,
+              1.1,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可点燃或熄灭的火把。",
+            "metadata": {
+              "model": "torch",
+              "behavior": "light",
+              "width": 0.5,
+              "height": 2,
+              "depth": 0.5
+            }
+          },
+          {
+            "id": "starfall-ritual-prop-3",
+            "kind": "block",
+            "name": "火盆",
+            "position": [
+              6,
+              0.7,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可点燃或熄灭的火盆。",
+            "metadata": {
+              "model": "brazier",
+              "behavior": "light",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          },
+          {
+            "id": "starfall-ritual-prop-4",
+            "kind": "block",
+            "name": "祭坛",
+            "position": [
+              0,
+              0.8,
+              -3
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的祭坛，可以保存自己的版本。",
+            "metadata": {
+              "model": "altar",
+              "width": 2,
+              "height": 1.3,
+              "depth": 1.6
+            }
+          },
+          {
+            "id": "starfall-ritual-prop-5",
+            "kind": "block",
+            "name": "水晶",
+            "position": [
+              0,
+              1.9,
+              -3
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的水晶，可以保存自己的版本。",
+            "metadata": {
+              "model": "crystal",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          },
+          {
+            "id": "starfall-ritual-prop-6",
+            "kind": "block",
+            "name": "石柱",
+            "position": [
+              -5,
+              1.45,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的石柱，可以保存自己的版本。",
+            "metadata": {
+              "model": "pillar",
+              "width": 0.9,
+              "height": 2.6,
+              "depth": 0.9
+            }
+          }
+        ],
+        "choices": [
+          {
+            "id": "6cc6ae29-aea5-424d-857a-1463d5c3dfd8",
+            "label": "稳定星核，封闭裂隙",
+            "description": "",
+            "nextSceneId": "dawn",
+            "failureSceneId": "ritual",
+            "check": {
+              "sides": 20,
+              "target": 12,
+              "modifier": 2
+            },
+            "conditions": [
+              {
+                "type": "quest",
+                "id": "star-core",
+                "status": "completed"
+              }
+            ],
+            "success": [
+              {
+                "type": "quest",
+                "id": "seal",
+                "status": "completed"
+              },
+              {
+                "type": "variable",
+                "id": "hope",
+                "delta": 1
+              }
+            ],
+            "failure": [
+              {
+                "type": "hp",
+                "id": "64d4d7b1-9a70-4d11-a892-bf8ac5dd98d9",
+                "delta": -2
+              },
+              {
+                "type": "variable",
+                "id": "alarm",
+                "delta": 1
+              }
+            ]
+          },
+          {
+            "id": "08d7bc10-aa2a-4d33-844b-f0d820715b83",
+            "label": "带队撤退",
+            "description": "",
+            "nextSceneId": "darkness",
+            "failureSceneId": "",
+            "check": null,
+            "conditions": [],
+            "success": [],
+            "failure": []
+          }
+        ]
+      },
+      {
+        "id": "dawn",
+        "chapterId": "bdc80ea8-6e98-4b08-b5a6-0d0ee3801c3d",
+        "title": "黎明回归",
+        "description": "第一缕阳光照回灰港。盟友与陌生人一同迎接归来的队伍。你们的选择成为新纪元的第一段历史。",
+        "gmNotes": "根据队伍已经发生的选择叙述，不预判骰子；允许玩家描述行动，再使用对应按钮结算。",
+        "goal": "裂隙已封闭，黎明之盟成立。",
+        "ending": "victory",
+        "cast": [],
+        "objects": [
+          {
+            "id": "starfall-dawn-prop-0",
+            "kind": "board",
+            "name": "港口木板地图",
+            "position": [
+              0,
+              0.05,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#838574",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可自由布置的港口木板地板，支持网格与自定义图片。",
+            "metadata": {
+              "surface": "port",
+              "width": 16,
+              "height": 0.1,
+              "depth": 12
+            }
+          },
+          {
+            "id": "starfall-dawn-prop-1",
+            "kind": "block",
+            "name": "宝箱",
+            "position": [
+              -5,
+              0.65,
+              -2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可以开启并取出物品，每个宝箱只能取物一次。",
+            "metadata": {
+              "model": "chest",
+              "behavior": "open",
+              "lootName": "恢复药剂",
+              "lootDescription": "使用后恢复一名角色的 2 点生命。",
+              "lootHeal": 2,
+              "width": 1.6,
+              "height": 1,
+              "depth": 1
+            }
+          },
+          {
+            "id": "starfall-dawn-prop-2",
+            "kind": "block",
+            "name": "火把",
+            "position": [
+              -6.5,
+              1.1,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可点燃或熄灭的火把。",
+            "metadata": {
+              "model": "torch",
+              "behavior": "light",
+              "width": 0.5,
+              "height": 2,
+              "depth": 0.5
+            }
+          },
+          {
+            "id": "starfall-dawn-prop-3",
+            "kind": "block",
+            "name": "火盆",
+            "position": [
+              6,
+              0.7,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可点燃或熄灭的火盆。",
+            "metadata": {
+              "model": "brazier",
+              "behavior": "light",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          },
+          {
+            "id": "starfall-dawn-prop-4",
+            "kind": "block",
+            "name": "桌子",
+            "position": [
+              0,
+              0.8,
+              -3
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的桌子，可以保存自己的版本。",
+            "metadata": {
+              "model": "table",
+              "width": 2.5,
+              "height": 1.3,
+              "depth": 1.5
+            }
+          },
+          {
+            "id": "starfall-dawn-prop-5",
+            "kind": "block",
+            "name": "木桶",
+            "position": [
+              5,
+              0.7,
+              -2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的木桶，可以保存自己的版本。",
+            "metadata": {
+              "model": "barrel",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          },
+          {
+            "id": "starfall-dawn-prop-6",
+            "kind": "block",
+            "name": "木箱",
+            "position": [
+              -3,
+              0.7,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的木箱，可以保存自己的版本。",
+            "metadata": {
+              "model": "crate",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          }
+        ],
+        "choices": []
+      },
+      {
+        "id": "darkness",
+        "chapterId": "bdc80ea8-6e98-4b08-b5a6-0d0ee3801c3d",
+        "title": "长夜的余波",
+        "description": "队伍离开北境，裂隙仍在扩张。幸存者的故事并未终止，但这次拯救世界的旅程已经结束。",
+        "gmNotes": "根据队伍已经发生的选择叙述，不预判骰子；允许玩家描述行动，再使用对应按钮结算。",
+        "goal": "本次战役未能封闭裂隙。",
+        "ending": "defeat",
+        "cast": [],
+        "objects": [
+          {
+            "id": "starfall-darkness-prop-0",
+            "kind": "board",
+            "name": "雪地地图",
+            "position": [
+              0,
+              0.05,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#c4d0cb",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可自由布置的雪地地板，支持网格与自定义图片。",
+            "metadata": {
+              "surface": "snow",
+              "width": 16,
+              "height": 0.1,
+              "depth": 12
+            }
+          },
+          {
+            "id": "starfall-darkness-prop-1",
+            "kind": "block",
+            "name": "宝箱",
+            "position": [
+              -5,
+              0.65,
+              -2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可以开启并取出物品，每个宝箱只能取物一次。",
+            "metadata": {
+              "model": "chest",
+              "behavior": "open",
+              "lootName": "恢复药剂",
+              "lootDescription": "使用后恢复一名角色的 2 点生命。",
+              "lootHeal": 2,
+              "width": 1.6,
+              "height": 1,
+              "depth": 1
+            }
+          },
+          {
+            "id": "starfall-darkness-prop-2",
+            "kind": "block",
+            "name": "火把",
+            "position": [
+              -6.5,
+              1.1,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可点燃或熄灭的火把。",
+            "metadata": {
+              "model": "torch",
+              "behavior": "light",
+              "width": 0.5,
+              "height": 2,
+              "depth": 0.5
+            }
+          },
+          {
+            "id": "starfall-darkness-prop-3",
+            "kind": "block",
+            "name": "火盆",
+            "position": [
+              6,
+              0.7,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#929284",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可点燃或熄灭的火盆。",
+            "metadata": {
+              "model": "brazier",
+              "behavior": "light",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          },
+          {
+            "id": "starfall-darkness-prop-4",
+            "kind": "block",
+            "name": "桌子",
+            "position": [
+              0,
+              0.8,
+              -3
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的桌子，可以保存自己的版本。",
+            "metadata": {
+              "model": "table",
+              "width": 2.5,
+              "height": 1.3,
+              "depth": 1.5
+            }
+          },
+          {
+            "id": "starfall-darkness-prop-5",
+            "kind": "block",
+            "name": "木桶",
+            "position": [
+              5,
+              0.7,
+              -2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的木桶，可以保存自己的版本。",
+            "metadata": {
+              "model": "barrel",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          },
+          {
+            "id": "starfall-darkness-prop-6",
+            "kind": "block",
+            "name": "木箱",
+            "position": [
+              -3,
+              0.7,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "color": "#a77b4d",
+            "locked": true,
+            "faceDown": false,
+            "value": 0,
+            "sides": 0,
+            "texture": "",
+            "backTexture": "",
+            "description": "可拖动、旋转和复制的木箱，可以保存自己的版本。",
+            "metadata": {
+              "model": "crate",
+              "width": 1.25,
+              "height": 1.25,
+              "depth": 1.25
+            }
+          }
+        ],
+        "choices": []
+      }
+    ],
+    "startSceneId": "harbor"
+  }
+}

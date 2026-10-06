@@ -1,0 +1,42 @@
+/* Tabletop edition: keep the original tool controls, share the simulator palette. */
+:root {
+  --app-bg: #211b14; --rail-bg: #18130e; --directory-bg: #2b2319;
+  --directory-hover: #3b2d1c; --frame-border: #665035; --on-dark: #efe2c8;
+  --muted-dark: #baa684; --faint-dark: #998468; --gold: #e0b269;
+  --gold-hover: #edc787; --ink: #3f3020; --muted-ink: #7b6954;
+  --paper: #f1e5ce; --paper-raised: #faf0dd; --paper-inset: #e6d7bd;
+  --paper-border: #d1bb96;
+}
+.side-rail { padding: 20px 12px; }
+.side-rail .brand, .rail-world, .rail-bottom, .page-heading, .world-banner,
+.app-footer, .app-topbar > p, a[href^="./world.html"] { display: none; }
+.rail-label { margin: 4px 10px 16px; color: var(--muted-dark); }
+.rail-item:hover { background: #312619; }.rail-item.is-active { background: #473522; border-color: #8b683b; }
+.app-shell { grid-template-columns: 170px minmax(0, 1fr); }
+.main-area { padding: 16px 20px; }
+.app-topbar { justify-content: flex-end; padding-bottom: 12px; min-height: 0; }
+.engine-banner { margin: 14px 0; padding: 12px 16px; background: #2b2218; border-color: #665035; }
+.engine-banner h2 { font-size: 15px; }.engine-banner p:not(.small-kicker) { font-size: 11px; }
+.engine-banner .small-kicker { display: none; }
+.archive-workspace { grid-template-columns: 220px minmax(0, 1fr); }
+body.tavern-maker.is-dark {
+  --bg: #211b14; --panel: #2b2319; --panel-solid: #2b2319; --panel-soft: #362b1d;
+  --field: #1a140e; --ink: #efe2c8; --muted: #baa684; --line: #59442d;
+  --line-strong: #8a6b43; --blue-soft: #4a3824; --action-ink: #261a0c;
+  --checker-a: #2c261e; --checker-b: #403427; --seg-hold: #8e806b; --seg-out: #ab8150;
+}
+.tavern-maker .maker-header { padding-top: 0; }.tavern-maker h1 { font-size: 20px; }
+.tavern-maker .eyebrow, .tavern-maker .lead, .tavern-maker .language-switcher { display: none; }
+@media(max-width:1050px) {
+  .app-shell { grid-template-columns: 145px minmax(0, 1fr); }
+  .main-area { padding-inline: 12px; }.archive-workspace { grid-template-columns: 180px minmax(0, 1fr); }
+}
+@media(max-width:750px) {
+  .app-shell { display: block; }.side-rail { padding: 10px; }
+  .rail-label { display: none; }.rail-nav { display: flex; flex-wrap: wrap; margin: 0; }
+  .rail-item { flex: 1 1 125px; }.archive-workspace { grid-template-columns: 1fr; }
+}
+
+.creator-heading, .creator-preview { background: #2d2318; border-color: #81603b; }
+.creator-preview-heading p, .creator-preview-story > p { color: #bba582; }
+.creator-preview-stats { border-color: #695137; }

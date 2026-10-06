@@ -1,0 +1,351 @@
+/* Bear Tavern: walnut surfaces, warm charcoal tools, and a single amber accent. */
+html[data-theme="bear-tavern"] {
+  --bt-bg: #171411;
+  --bt-panel: #211d19;
+  --bt-raised: #2c2620;
+  --bt-input: #171410;
+  --bt-line: #463a2d;
+  --bt-text: #eee5d6;
+  --bt-muted: #ac9f8d;
+  --bt-amber: #e6b666;
+  --bt-amber-soft: #e6b6661c;
+  --bt-gold-line: #a27b42;
+  background: var(--bt-bg);
+  color-scheme: dark;
+}
+html[data-theme="bear-tavern"] body { background: var(--bt-bg); }
+html[data-theme="bear-tavern"] :is(button, a, input, textarea, select, summary):focus-visible { outline: 2px solid #efc078; outline-offset: 3px; }
+html[data-theme="bear-tavern"] :is(.tt-app, .rpg-studio, .as-app, .lm-app) {
+  --tt-bg: var(--bt-bg); --tt-panel: var(--bt-panel); --tt-line: var(--bt-line); --tt-muted: var(--bt-muted); --tt-text: var(--bt-text); --tt-gold: var(--bt-amber);
+  color: var(--bt-text); background: var(--bt-bg);
+  font-family: 'Microsoft YaHei UI', 'Microsoft YaHei', system-ui, sans-serif;
+}
+.tt-app { font-size: 13px; }
+html[data-theme="bear-tavern"] :is(.tt-app, .tt-dialog, .gl-dialog, .lm-app, .rpg-studio, .as-app) :is(input:not([type=checkbox]):not([type=color]), textarea, select) {
+  background: var(--bt-input); border-color: var(--bt-line); color: var(--bt-text); border-radius: 6px;
+}
+html[data-theme="bear-tavern"] input::placeholder, html[data-theme="bear-tavern"] textarea::placeholder { color: #897d6d; }
+html[data-theme="bear-tavern"] input[type=checkbox] { accent-color: var(--bt-amber); }
+html[data-theme="bear-tavern"] button { transition: background-color .15s, border-color .15s, color .15s; }
+html[data-theme="bear-tavern"] button:disabled { cursor: not-allowed; opacity: .38; }
+html[data-theme="bear-tavern"] .tt-app button:hover:not(:disabled) { color: #ffe1a8; }
+html[data-theme="bear-tavern"] :is(.tt-gold-button, .rpg-primary, .ag-primary, .as-primary, .lm-primary) {
+  background: linear-gradient(180deg, #f0c475, #d8a24c); border: 1px solid #f3cb83; color: #25190d; font-weight: 650; box-shadow: inset 0 1px #ffe8af55, 0 2px 5px #0003;
+}
+html[data-theme="bear-tavern"] :is(.tt-gold-button, .rpg-primary, .ag-primary, .as-primary, .lm-primary):hover:not(:disabled) { background: #f3c77f; color: #21160c; }
+html[data-theme="bear-tavern"] .tt-small-button { background: #ffffff04; border-color: #64513b; color: #ded0bc; border-radius: 6px; }
+html[data-theme="bear-tavern"] .tt-plain { color: #c9bba5; }
+html[data-theme="bear-tavern"] .tt-header {
+  height: 68px; padding: 0 20px; gap: 18px; background: linear-gradient(180deg, #29221b, #191613); border-bottom: 1px solid #80603a;
+  box-shadow: 0 2px 10px #0003; position: relative; z-index: 20;
+}
+html[data-theme="bear-tavern"] .tt-brand { gap: 9px; }
+html[data-theme="bear-tavern"] .tt-brand > span { width: 44px; height: 44px; border: 0; transform: none; background: transparent; }
+.tt-brand img { width: 100%; height: 100%; object-fit: contain; }
+html[data-theme="bear-tavern"] .tt-brand b { color: #f0dfc2; font-family: 'STZhongsong', 'SimSun', serif; font-size: 24px; letter-spacing: 3px; font-weight: 700; }
+html[data-theme="bear-tavern"] .tt-brand small { display: block; font-family: Arial, sans-serif; letter-spacing: 2px; color: #c9a974; font-size: 7px; margin-top: 4px; }
+html[data-theme="bear-tavern"] .tt-table-name { flex: 1 1 180px; max-width: 360px; min-width: 80px; padding-left: 17px; border-left: 1px solid #584631; font-size: 13px; color: #e2d5c0; }
+.bt-draft-tag { flex-shrink: 0; padding: 3px 6px; border: 1px solid #63523b; border-radius: 4px; color: #b6a88f; font-size: 9px; }
+.bt-draft-tag { max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+html[data-theme="bear-tavern"] .tt-chevron { color: #b49a71; }
+html[data-theme="bear-tavern"] .we-mode-switch { background: #13110f; border: 1px solid #8b693d; padding: 3px; border-radius: 9px; gap: 0; }
+html[data-theme="bear-tavern"] .we-mode-switch button { color: #baad9b; font-size: 12px; padding: 10px 15px; border-radius: 6px; }
+html[data-theme="bear-tavern"] .we-mode-switch button[aria-pressed=true] { color: #24180b; background: linear-gradient(#edc274, #d7a04b); box-shadow: 0 0 0 1px #f4cc8755; font-weight: 650; }
+html[data-theme="bear-tavern"] .tt-header-right { margin-left: auto; gap: 14px; }
+html[data-theme="bear-tavern"] .tt-header .tt-small-button { padding: 8px 12px; font-size: 11px; }
+html[data-theme="bear-tavern"] .tt-header .we-start-play { padding: 10px 15px; white-space: nowrap; }
+html[data-theme="bear-tavern"] .tt-layout { height: auto; min-height: 0; }
+html[data-theme="bear-tavern"] .tt-edit-mode .tt-layout { grid-template-columns: 238px minmax(0, 1fr) 298px; }
+html[data-theme="bear-tavern"] .tt-play-mode .tt-layout { grid-template-columns: minmax(0, 1fr) 334px; }
+html[data-theme="bear-tavern"] .tt-stage { background: #1b1611; min-width: 0; overflow: hidden; }
+html[data-theme="bear-tavern"] .tt-stage-toolbar { height: 49px; padding: 0 17px; background: linear-gradient(180deg, #2a241e, #211c17); border-bottom: 1px solid var(--bt-line); color: #c6b79e; font-size: 11px; gap: 10px; }
+html[data-theme="bear-tavern"] .tt-live-dot { background: #d6ae69; box-shadow: 0 0 6px #ddad5740; }
+html[data-theme="bear-tavern"] .tt-stage-toolbar b { color: #dfc89f; }
+html[data-theme="bear-tavern"] .tt-view-buttons button { color: #b7a88d; padding: 6px 8px; border-radius: 5px; }
+html[data-theme="bear-tavern"] .tt-view-buttons button.active { background: #b78a4325; color: #f1d098; }
+html[data-theme="bear-tavern"] .tt-canvas-wrap { inset: 49px 0 0; overflow: hidden; }
+html[data-theme="bear-tavern"] .tt-edit-mode .tt-canvas-wrap { bottom: 183px; }
+html[data-theme="bear-tavern"] .tt-edit-mode .tt-stage:has(.bt-event-dock.collapsed) .tt-canvas-wrap { bottom: 73px; }
+html[data-theme="bear-tavern"] .tt-stage-caption { height: 27px; min-height: 27px; padding: 0 13px; color: #b0a18a; background: #1c1713e8; border-top: 1px solid #55432d66; font-size: 9px; }
+html[data-theme="bear-tavern"] .tt-play-mode .tt-stage-caption { color: #c0af92; }
+html[data-theme="bear-tavern"] .tt-loading { background: #1b1713; color: #cdb994; }
+/* Authoring sidebar */
+.bt-editor-sidebar { display: flex; flex-direction: column; min-height: 0; overflow: hidden; background: linear-gradient(115deg, #27211b, #1c1814); border-right: 1px solid #4b3c2a; }
+.bt-sidebar-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; padding: 5px; height: 49px; border-bottom: 1px solid var(--bt-line); flex-shrink: 0; }
+.bt-sidebar-tabs button { color: #b5a58f; border: 1px solid transparent; border-radius: 5px; font-size: 12px; }
+.bt-sidebar-tabs button[aria-selected=true] { background: #a17a352b; color: #f0cb89; border-color: #8c693b; }
+html[data-theme="bear-tavern"] .bt-editor-sidebar .tt-toolrail { display: flex; flex-direction: row; flex-wrap: wrap; padding: 9px 12px; gap: 4px; border: 0; border-bottom: 1px solid #4d3c2866; background: transparent; }
+html[data-theme="bear-tavern"] .bt-editor-sidebar .tt-toolrail > button { width: 28px; height: 28px; color: #a89981; border-radius: 5px; }
+html[data-theme="bear-tavern"] .bt-editor-sidebar .tt-toolrail > button > svg { width: 17px; }
+html[data-theme="bear-tavern"] .bt-editor-sidebar .tt-toolrail > button.active { color: #e9be76; background: #a7853d25; border-color: #8c6b3c; }
+.bt-editor-sidebar .tt-rail-space, .bt-editor-sidebar .tt-toolrail > i { display: none; }
+.bt-editor-sidebar .tt-toolrail .tt-mobile-panel { display: none; }
+.bt-sidebar-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 0 10px; color: #e4d7c0; font-size: 11px; font-weight: 600; }
+.bt-sidebar-heading > span, .bt-library-heading { display: flex; gap: 7px; align-items: center; min-width: 0; }
+.bt-sidebar-heading small { font-weight: 400; color: #a9987a; font-size: 10px; }
+.bt-scene-tree { padding: 0 12px 10px; flex: 0 1 39%; min-height: 110px; overflow: auto; border-bottom: 1px solid var(--bt-line); scrollbar-width: thin; scrollbar-color: #685136 transparent; }
+.bt-scene-list { max-height: 130px; overflow: auto; margin-bottom: 6px; scrollbar-width: thin; }
+.bt-scene-list button, .bt-current-scene { display: flex; align-items: center; width: 100%; gap: 7px; padding: 7px; border-radius: 4px; text-align: left; font-size: 11px; color: #c1b297; }
+.bt-scene-list button > span, .bt-current-scene > span { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bt-scene-list button.active { background: #b68d4420; color: #e9c487; }
+.bt-current-scene small { color: #9d8e75; font-size: 9px; }
+.bt-hierarchy details { margin: 2px 0; }
+.bt-scene-search { height: 28px; margin-bottom: 6px; }
+.bt-hierarchy summary { display: flex; align-items: center; gap: 7px; padding: 7px 4px; list-style: none; font-size: 11px; color: #c8bca7; cursor: pointer; }
+.bt-hierarchy summary:before { content: '›'; color: #a48b62; font-size: 14px; width: 8px; }
+.bt-hierarchy details[open] > summary:before { transform: rotate(90deg); }
+.bt-hierarchy summary small { margin-left: auto; color: #8d7c64; font-size: 9px; }
+.bt-hierarchy details > button { width: 100%; display: flex; align-items: center; gap: 8px; padding: 6px 7px 6px 24px; color: #b7a992; font-size: 10px; text-align: left; border-radius: 4px; border: 1px solid transparent; }
+.bt-hierarchy details > button span { flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.bt-hierarchy button i { width: 5px; height: 12px; border-radius: 2px; flex-shrink: 0; }
+.bt-hierarchy button.active { border-color: #a9854f80; background: #b68d441b; color: #f1d196; }
+.bt-asset-library { padding: 0 12px 10px; flex: 1; min-height: 0; overflow: auto; scrollbar-width: thin; scrollbar-color: #685136 transparent; }
+.bt-asset-library.expanded { padding-top: 4px; }
+.bt-library-heading { color: #e6d6b9; font-size: 11px; }
+.bt-search { height: 32px; display: flex; align-items: center; gap: 7px; border: 1px solid var(--bt-line); background: #171410; color: #9d8d75; border-radius: 5px; padding: 0 9px; }
+html[data-theme="bear-tavern"] .bt-search input { min-width: 0; width: 100%; border: 0; padding: 0; outline: none; height: 28px; font-size: 10px; background: transparent; }
+.bt-asset-categories { display: flex; gap: 4px; flex-wrap: wrap; padding: 10px 0; }
+.bt-asset-categories button { padding: 4px 7px; border: 1px solid #594832; border-radius: 12px; color: #a99b82; font-size: 9px; white-space: nowrap; }
+.bt-asset-categories button[aria-pressed=true] { border-color: #ad8245; color: #f0ca89; background: #ad824522; }
+.bt-asset-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+.bt-asset-grid > button { display: flex; flex-direction: column; min-width: 0; border: 1px solid #4c3d2b; border-radius: 6px; overflow: hidden; background: #15120f; color: #d1c1a6; }
+.bt-asset-grid > button:hover:not(:disabled) { border-color: #b58a4d; background: #2c231a; }
+.bt-asset-preview { position: relative; display: flex; align-items: center; justify-content: center; gap: 6px; height: 72px; width: 100%; background: radial-gradient(ellipse at 50% 70%, #87704a24, transparent 70%), linear-gradient(120deg, #29231c, #191612); color: color-mix(in srgb, var(--asset-color) 75%, #dfcda2); }
+.bt-asset-preview svg { filter: drop-shadow(0 6px 6px #0007); }
+.bt-asset-preview img { width: 100%; height: 100%; object-fit: contain; padding: 5px; }
+.bt-asset-preview > b { font-family: Georgia, serif; color: #d9c592; font-size: 14px; font-weight: 500; }
+.bt-asset-name { padding: 6px 5px; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; border-top: 1px solid #55432c55; }
+.bt-sidebar-empty { color: #aa9a7f; font-size: 11px; line-height: 1.8; padding: 12px 0; }
+.bt-sidebar-empty button { display: block; margin-top: 5px; color: #e0b66d; }
+.bt-asset-pages { display: flex; justify-content: center; align-items: center; gap: 19px; padding-top: 10px; font-size: 10px; color: #a99675; }
+.bt-asset-pages button { padding: 4px 10px; border: 1px solid #5d4930; border-radius: 4px; font-size: 15px; }
+.bt-sidebar-footer { flex-shrink: 0; padding: 10px 12px; border-top: 1px solid var(--bt-line); }
+.bt-sidebar-footer > div { display: flex; gap: 7px; }
+.bt-sidebar-footer button { flex: 1; display: flex; align-items: center; justify-content: center; gap: 4px; border: 1px solid #6b5133; border-radius: 5px; height: 31px; font-size: 10px; }
+.bt-sidebar-footer > small { display: block; padding-top: 8px; text-align: center; font-size: 9px; color: #9c8a6d; }
+/* Authoring events stay beside the table, not on top of the canvas. */
+.bt-event-dock { position: absolute; left: 0; right: 0; bottom: 27px; height: 156px; background: linear-gradient(180deg, #251f19, #1c1814); border-top: 1px solid #6b5232; z-index: 5; }
+.bt-event-dock.collapsed { height: 46px; }
+.bt-event-dock > header { display: flex; align-items: center; gap: 16px; height: 46px; padding: 0 14px; }
+.bt-event-dock > header > span { display: flex; align-items: center; gap: 7px; white-space: nowrap; font-size: 12px; color: #e8dac2; }
+.bt-event-dock > header > div { display: flex; gap: 4px; }
+.bt-event-dock > header button { padding: 5px 10px; color: #b3a48a; border-radius: 5px; border: 1px solid transparent; white-space: nowrap; font-size: 10px; }
+.bt-event-dock > header button[aria-selected=true] { color: #edc98b; background: #a27a3626; border-color: #967039; }
+.bt-event-dock > header .bt-event-open { margin-left: auto; display: flex; align-items: center; gap: 4px; border-color: #82623b; color: #e3bd7d; }
+.bt-event-content { height: 108px; padding: 3px 18px 13px; overflow-x: auto; scrollbar-width: thin; scrollbar-color: #6a5032 transparent; }
+.bt-flow-nodes { display: flex; align-items: center; gap: 10px; width: max-content; height: 100%; }
+.bt-flow-step { display: flex; align-items: center; gap: 10px; color: #79654b; }
+.bt-flow-step button { display: flex; flex-direction: column; gap: 5px; text-align: left; min-width: 156px; max-width: 205px; border: 1px solid #51412d; border-radius: 6px; padding: 10px 12px; background: #191612; }
+.bt-flow-step button.active { border-color: #b58a4c; background: #a7823e15; }
+.bt-flow-step small { color: #ac9470; font-size: 8px; }
+.bt-flow-step b { color: #e1d2b8; font-weight: 500; font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bt-flow-step span { color: #9d8c72; font-size: 9px; }
+.bt-event-empty { display: flex; align-items: center; gap: 14px; height: 100%; color: #be9c67; }
+.bt-event-empty > div { flex: 1; min-width: 0; }
+.bt-event-empty b { font-weight: 500; font-size: 12px; color: #ddcbb0; }
+.bt-event-empty p { font-size: 10px; color: #a5947a; line-height: 1.7; margin: 5px 0 0; }
+.bt-event-empty > button { display: flex; align-items: center; gap: 6px; font-size: 10px; padding: 8px 11px; border: 1px solid #725535; border-radius: 5px; flex-shrink: 0; }
+/* Property inspector and play guide */
+html[data-theme="bear-tavern"] .tt-panel { background: linear-gradient(100deg, #26211b, #1b1814); border-left: 1px solid #816139; }
+html[data-theme="bear-tavern"] .tt-panel-tabs { height: 49px; border-bottom-color: #614b30; padding: 0 9px; gap: 4px; }
+html[data-theme="bear-tavern"] .tt-panel-tabs > button { font-size: 11px; gap: 5px; color: #a8987e; }
+html[data-theme="bear-tavern"] .tt-panel-tabs > button.active { color: #f0cd91; }
+html[data-theme="bear-tavern"] .tt-panel-tabs > button.active:after { background: #d5ab68; height: 2px; }
+html[data-theme="bear-tavern"] .tt-panel-body { padding: 20px 17px; scrollbar-color: #7c603b transparent; }
+html[data-theme="bear-tavern"] .tt-play-mode .tt-panel-body { padding: 24px 21px; }
+html[data-theme="bear-tavern"] .tt-panel-footer { border-top-color: var(--bt-line); color: #b59d75; height: 38px; background: #181410; }
+html[data-theme="bear-tavern"] .tt-panel-footer button { color: #bd9c62; }
+html[data-theme="bear-tavern"] .tt-panel-footer > span > span { background: #9bac80; }
+.bt-surface-details { border-bottom: 1px solid #55422c; margin: -4px 0 18px; padding-bottom: 12px; color: #ac9b7f; }
+.bt-surface-details > summary { font-size: 10px; cursor: pointer; }
+.bt-surface-details .tt-surface-spec { border: 0; margin: 10px 0 0; padding: 0; }
+.bt-inspector-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 3px; margin-bottom: 18px; border: 1px solid #57432b; border-radius: 6px; background: #191511; }
+.bt-inspector-tabs button { padding: 7px; font-size: 11px; color: #b29e7e; border-radius: 4px; }
+.bt-inspector-tabs button[aria-selected=true] { background: #bd935332; color: #eaca95; }
+.tt-edit-mode .bt-inspector-list { display: none; }
+.bt-generated-hint { margin: -6px 0 17px; font-size: 10px; line-height: 1.8; color: #b39d7a; }
+.bt-generated-hint button { display: block; margin-top: 4px; color: #e0b471; font-size: 10px; }
+html[data-theme="bear-tavern"] :is(.tt-field, .tt-transform-heading, .tt-table-options > label, .tt-list-heading, .we-movement-fields, .pw-actions label) { color: #c7b597; }
+html[data-theme="bear-tavern"] :is(.tt-field small, .tt-transform-heading > span:last-child, .tt-surface-spec p, .we-movement-fields small, .we-section > p, .tt-guide-readonly) { color: #a89980; }
+html[data-theme="bear-tavern"] .tt-object-glyph { background: #33291e; border-color: #7c6542; }
+html[data-theme="bear-tavern"] :is(.tt-object-heading h3, .tt-empty-selection h3, .we-section h3, .we-section h4) { color: #e8d9c0; }
+html[data-theme="bear-tavern"] :is(.tt-object-heading small, .tt-empty-selection p, .tt-object-footer > button, .tt-empty-selection > svg, .tt-multiselect) { color: #ac9b7e; }
+html[data-theme="bear-tavern"] :is(.tt-empty-selection, .tt-object-footer, .tt-table-options, .we-summary, .we-move-rule, .we-party-list button) { border-color: #51412c; }
+html[data-theme="bear-tavern"] .tt-table-options button.active { color: #e5bb7b; }
+html[data-theme="bear-tavern"] :is(.we-section > small, .we-move-rule > b, .we-health b, .tt-multiselect button) { color: #dbb47a; }
+html[data-theme="bear-tavern"] .tt-panel :is(.pw-actions, .tt-dice-value, .pw-stat, .pw-tabs button, .we-party-list button.active) { background: #2b231a; border-color: #634b2e; color: #d3b98d; }
+html[data-theme="bear-tavern"] .tt-object-popover { background: #211b15f5; border-color: #8b693c; box-shadow: 0 18px 50px #0006; border-radius: 8px; }
+html[data-theme="bear-tavern"] .tt-object-popover-heading { color: #cfab75; }
+html[data-theme="bear-tavern"] :is(.tt-selection-toolbar, .tt-measure, .tt-dice-tray) { background: #251d14f2; border-color: #917043; color: #e0bd80; }
+html[data-theme="bear-tavern"] :is(.rpg-guide, .ag-guide, .pw-workbench) { color: #e0d3bf; }
+html[data-theme="bear-tavern"] :is(.rpg-guide header h3, .ag-heading h3, .pw-intro h3) { color: #f0dfbd; font-size: 23px; line-height: 1.5; letter-spacing: .5px; }
+html[data-theme="bear-tavern"] :is(.rpg-guide header small, .ag-heading small, .rpg-guide h4, .ag-goal small) { color: #c2a16d; }
+html[data-theme="bear-tavern"] :is(.rpg-guide header p, .rpg-guide small, .rpg-muted, .ag-heading p, .ag-note, .ag-journal small, .ag-recap small) { color: #a7967c; }
+html[data-theme="bear-tavern"] :is(.rpg-stats, .ag-variables, .ag-recap, .rpg-character-stats span) { background: #b3946610; border-color: #78603e; color: #d1c3aa; }
+html[data-theme="bear-tavern"] .rpg-stats { font-size: 11px; padding: 12px; margin-top: 14px; }
+html[data-theme="bear-tavern"] .rpg-narrative { font-size: 14px; line-height: 1.9; }
+html[data-theme="bear-tavern"] .rpg-narrative p { margin-bottom: 14px; }
+html[data-theme="bear-tavern"] :is(.ag-narrative, .ag-narrative p) { color: #ddd0ba; line-height: 2; font-size: 14px; }
+html[data-theme="bear-tavern"] :is(.rpg-guide button, .ag-choices button, .ag-party button, .pw-workbench button, .pw-kit button) { background: #ffffff03; color: #d6c4a6; border-color: #725738; border-radius: 6px; }
+html[data-theme="bear-tavern"] :is(.ag-goal, .ag-result, .ag-details, .ag-quest) { background: transparent; border-color: #725a36; color: #d9c49c; }
+html[data-theme="bear-tavern"] .ag-goal { border: 0; border-left: 3px solid #dcb575; border-radius: 0; padding: 2px 0 2px 12px; }
+html[data-theme="bear-tavern"] :is(.ag-choices button b, .ag-goal b, .ag-party button span) { color: #e7d6b5; }
+html[data-theme="bear-tavern"] :is(.ag-choices button span, .ag-choices p, .ag-party button b, .pw-intro p) { color: #ac9978; }
+html[data-theme="bear-tavern"] :is(.rpg-guide section, .rpg-guide details, .rpg-equipment-slots article, .rpg-bag-card, .rpg-practice-card, .rpg-sheet-skill) { border-color: #6a53332e; }
+html[data-theme="bear-tavern"] .rpg-key-hint { color: #d3b17a; }
+/* Contextual play actions and physical-roll status */
+.bt-status-story { display: block; flex-basis: 100%; font-size: 11px; color: #c8b595; max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+html[data-theme="bear-tavern"] .tt-play-mode .tt-stage-toolbar:has(.bt-status-story) { height: 67px; }
+html[data-theme="bear-tavern"] .tt-stage-toolbar:has(.bt-status-story) > div:first-child { flex-wrap: wrap; row-gap: 5px; min-width: 0; flex: 1; }
+html[data-theme="bear-tavern"] .tt-stage:has(.bt-status-story) .tt-canvas-wrap { top: 67px; }
+/* Combat HUD and cards are styled together in rpg-battle-presentation.css. */
+.bt-play-action-dock { position: absolute; left: 50%; transform: translateX(-50%); bottom: 42px; max-width: calc(100% - 32px); width: max-content; display: flex; align-items: center; gap: 7px; padding: 8px; background: #221b14f0; border: 1px solid #957243; border-radius: 8px; box-shadow: 0 7px 30px #0006; z-index: 6; }
+.bt-action-actor { display: flex; align-items: center; gap: 9px; padding: 0 12px 0 5px; color: #dab77d; }
+.bt-action-actor b { color: #e8d4b3; font-size: 11px; font-weight: 500; max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bt-play-action-dock > button { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 12px; border: 1px solid #705536; border-radius: 5px; color: #dec8a2; background: #382c1e; font-size: 11px; white-space: nowrap; }
+.bt-play-action-dock > button.bt-action-primary { background: #e4b261; color: #26190b; border-color: #f0c57a; }
+.bt-play-action-dock kbd { font: inherit; font-size: 9px; opacity: .65; margin-left: 5px; }
+.tt-stage:has(.bt-play-action-dock) > .bt-story-cue { display: none; }
+html[data-theme="bear-tavern"] .tt-play-cue { background: #211c15f0; border-color: #856839; color: #d7b879; }
+html[data-theme="bear-tavern"] .tt-play-cue span { color: #c5b596; }
+html[data-theme="bear-tavern"] .tt-play-cue > button { background: #75552c; color: #fae0ae; }
+/* Bottom hand dock */
+html[data-theme="bear-tavern"] .tt-handbar { height: 72px; min-height: 72px; padding: 10px 20px; gap: 18px; background: linear-gradient(#29221a, #1c1814); border-top: 1px solid #80603a; }
+html[data-theme="bear-tavern"] .tt-hand-heading { width: auto; gap: 10px; flex-shrink: 0; color: #c9b18a; }
+html[data-theme="bear-tavern"] .tt-hand-heading > select { font-size: 12px; max-width: 92px; height: 32px; padding: 0 5px; background: transparent; border-color: transparent; }
+html[data-theme="bear-tavern"] .tt-hand-heading > span { margin: 0; color: #a8987c; font-size: 10px; }
+.bt-hand-count { display: flex; align-items: center; gap: 5px; }
+html[data-theme="bear-tavern"] .tt-hand-empty { font-size: 11px; color: #af9b77; }
+html[data-theme="bear-tavern"] .tt-hand-cards > button { background: #32271a; border-color: #81613b; color: #e1c89e; border-radius: 5px; }
+html[data-theme="bear-tavern"] .tt-hand-hint { display: flex; align-items: center; gap: 7px; white-space: nowrap; color: #a9997c; font-size: 10px; }
+.bt-save-dot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: #9db47b; box-shadow: 0 0 5px #99ae6540; }
+html[data-theme="bear-tavern"] .we-editor-footer { height: 36px; background: #1c1713; border-top-color: #5b442b; padding: 0 16px; font-size: 10px; gap: 17px; color: #bfa581; }
+html[data-theme="bear-tavern"] .we-editor-footer b { color: #97856b; font-size: 10px; }
+html[data-theme="bear-tavern"] .we-editor-footer button { color: #cfad76; font-size: 10px; }
+html[data-theme="bear-tavern"] .rpg-audio-toggle { left: auto; right: 142px; bottom: 7px; padding: 4px 8px; background: #30251a; border-color: #6c5130; color: #d5b985; font-size: 9px; }
+/* The same brand carries into full-screen studios, libraries and dialogs. */
+html[data-theme="bear-tavern"] :is(.tt-dialog, .gl-dialog, .as-export) { background: #241e17; border-color: #9c7845; color: #e6d7bc; border-radius: 10px; box-shadow: 0 20px 80px #0009; }
+html[data-theme="bear-tavern"] :is(.tt-dialog, .gl-dialog, .as-export)::backdrop { background: #100b07b8; backdrop-filter: blur(5px); }
+html[data-theme="bear-tavern"] :is(.tt-dialog-heading span, .gl-heading small) { color: #bb9963; letter-spacing: 2px; }
+html[data-theme="bear-tavern"] :is(.tt-dialog-heading h2, .gl-heading h2) { color: #f0dfbd; }
+html[data-theme="bear-tavern"] :is(.tt-dialog-intro, .gl-heading p, .gl-section-heading p) { color: #bbaa8b; }
+html[data-theme="bear-tavern"] :is(.tt-presets > button, .tt-saved-record, .gl-card, .gl-project, .gl-saved-record) { background: #1b1712; border-color: #5c462b; color: #dcc6a1; }
+html[data-theme="bear-tavern"] :is(.tt-presets > button.active, .tt-saved-record.active, .tt-saved-record.selected, .gl-saved-record.selected, .gl-saved-record.active) { background: #ae843324; border-color: #a67e42; }
+html[data-theme="bear-tavern"] :is(.record-batch-toolbar, .record-undo-notice) { border-color: #8d6a3b; background: #b68d3e10; color: #d9bb87; }
+html[data-theme="bear-tavern"] .record-undo { border-color: #8d6a3b; background: #b68d3e10; color: #d9bb87; }
+html[data-theme="bear-tavern"] .record-undo button { color: #efc57d; }
+.bt-character-fold { border-top: 1px solid #66503366; padding-top: 14px; margin-top: 12px; }
+.bt-character-fold > summary { color: #c7aa7a; cursor: pointer; font-size: 12px; }
+.bt-character-fold > .rpg-character-sheet { padding-top: 15px; }
+html[data-theme="bear-tavern"] :is(.record-batch-delete, .record-delete-confirm, .record-batch-confirm-button) { border-color: #ad7557; color: #e7b194; }
+html[data-theme="bear-tavern"] :is(.tt-saved-record small, .gl-saved-record small, .gl-card p, .gl-card small, .gl-project small) { color: #a59477; }
+html[data-theme="bear-tavern"] :is(.rpg-studio-header, .as-header, .lm-header, .as-footer) { background: linear-gradient(#29221b, #1b1713); border-color: #80603a; color: #e6d4b2; }
+html[data-theme="bear-tavern"] :is(.rpg-project-tree, .as-sidebar, .lm-editor) { background: #1c1813; border-color: #55422a; }
+html[data-theme="bear-tavern"] :is(.rpg-author-main > section, .rpg-op, .as-choice-editor, .as-flow button, .lm-item, .lm-preview, .rpg-map-scroll) { background: #252018; border-color: #55432c; color: #d8c9ad; }
+html[data-theme="bear-tavern"] :is(.rpg-project-tree .active, .rpg-studio .active, .as-sidebar .active, .lm-category.active) { border-color: #ad8244; background: #aa803021; color: #e5c48d; }
+html[data-theme="bear-tavern"] :is(.rpg-studio label, .rpg-project-tree h3, .lm-help, .lm-app small) { color: #a99779; }
+html[data-theme="bear-tavern"] :is(.rpg-studio button:not(.rpg-primary), .lm-app button:not(.lm-primary), .as-app button:not(.as-primary)) { border-color: #735839; color: #d5bd95; }
+html[data-theme="bear-tavern"] :is(.rpg-studio-notice, .as-status, .lm-notice) { background: #9e783516; color: #d6b273; }
+html[data-theme="bear-tavern"] .tt-toast { background: #2d2319; border-color: #a8824c; color: #ecd2a3; box-shadow: 0 10px 30px #0007; border-radius: 7px; }
+html[data-theme="bear-tavern"] .tt-play-immersive .tt-layout { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1700px) {
+  html[data-theme="bear-tavern"] .tt-edit-mode .tt-layout { grid-template-columns: 266px minmax(0, 1fr) 330px; }
+  html[data-theme="bear-tavern"] .tt-play-mode .tt-layout { grid-template-columns: minmax(0, 1fr) 370px; }
+  .bt-asset-preview { height: 88px; }
+}
+@media (max-width: 1280px) {
+  html[data-theme="bear-tavern"] .tt-header { gap: 12px; padding: 0 15px; }
+  html[data-theme="bear-tavern"] .tt-table-name { font-size: 11px; padding-left: 11px; max-width: 280px; }
+  html[data-theme="bear-tavern"] .tt-header-right { gap: 11px; }
+  html[data-theme="bear-tavern"] .tt-header .we-story-entry { display: none; }
+  html[data-theme="bear-tavern"] .tt-header .we-mode-switch button { font-size: 11px; padding: 9px 12px; }
+  html[data-theme="bear-tavern"] .tt-edit-mode .tt-layout { grid-template-columns: 215px minmax(0, 1fr) 280px; }
+  html[data-theme="bear-tavern"] .tt-play-mode .tt-layout { grid-template-columns: minmax(0, 1fr) 310px; }
+  .bt-event-dock > header { gap: 10px; padding: 0 11px; }
+  .bt-event-dock > header button { padding: 5px 7px; }
+  .bt-asset-preview { height: 66px; }
+}
+@media (max-width: 1050px) {
+  html[data-theme="bear-tavern"] .tt-brand b { font-size: 20px; letter-spacing: 2px; }
+  html[data-theme="bear-tavern"] .tt-brand > span { width: 35px; height: 35px; }
+  html[data-theme="bear-tavern"] .tt-edit-mode .tt-layout { grid-template-columns: 188px minmax(0, 1fr) 250px; }
+  html[data-theme="bear-tavern"] .tt-play-mode .tt-layout { grid-template-columns: minmax(0, 1fr) 280px; }
+  html[data-theme="bear-tavern"] .tt-header .bt-save-draft > span, html[data-theme="bear-tavern"] .tt-header .we-assets > span { display: none; }
+  html[data-theme="bear-tavern"] .tt-table-name { max-width: 180px; }
+  .bt-draft-tag { display: none; }
+  .bt-event-dock > header > span { font-size: 10px; gap: 4px; }
+  .bt-event-dock > header { gap: 4px; }
+  .bt-event-dock > header .bt-event-open { font-size: 9px; padding: 5px; }
+  .bt-event-dock > header > div { gap: 0; }
+  .bt-event-empty > button { padding: 6px; font-size: 9px; }
+}
+@media (max-width: 800px) {
+  html[data-theme="bear-tavern"] .tt-header { gap: 8px; padding: 0 10px; height: 61px; }
+  html[data-theme="bear-tavern"] .tt-header .tt-brand small { font-size: 6px; letter-spacing: 1px; }
+  html[data-theme="bear-tavern"] .tt-header .tt-plain > span { display: none; }
+  html[data-theme="bear-tavern"] .tt-header .we-start-play > span { display: none; }
+  html[data-theme="bear-tavern"] .tt-header .we-start-play { display: flex; padding: 8px; }
+  html[data-theme="bear-tavern"] .we-mode-switch button { padding: 8px; font-size: 10px; }
+  html[data-theme="bear-tavern"] .tt-header .tt-table-name { max-width: 180px; }
+  html[data-theme="bear-tavern"] .tt-edit-mode .tt-layout { grid-template-columns: 172px minmax(0, 1fr); }
+  html[data-theme="bear-tavern"] .tt-edit-mode .tt-panel { display: none; position: absolute; right: 0; top: 61px; bottom: 36px; width: 270px; z-index: 16; box-shadow: -10px 0 40px #0008; }
+  html[data-theme="bear-tavern"] .tt-edit-mode .tt-panel.mobile-open { display: flex; }
+  .bt-editor-sidebar .tt-toolrail .tt-mobile-panel { display: flex !important; }
+  html[data-theme="bear-tavern"] .tt-play-mode .tt-layout { grid-template-columns: minmax(0, 1fr) 260px; }
+  html[data-theme="bear-tavern"] .tt-panel-body { padding: 15px; }
+  .bt-action-actor { display: none; }
+  .bt-play-action-dock { gap: 5px; padding: 6px; }
+  .bt-play-action-dock > button { padding: 8px 10px; }
+}
+@media (max-width: 650px) {
+  html[data-theme="bear-tavern"] .tt-header { gap: 6px; }
+  html[data-theme="bear-tavern"] .tt-brand > span { width: 28px; height: 28px; }
+  html[data-theme="bear-tavern"] .tt-brand b { font-size: 17px; letter-spacing: 1px; }
+  html[data-theme="bear-tavern"] .tt-brand small { display: none !important; }
+  html[data-theme="bear-tavern"] .tt-header .tt-table-name { max-width: none; padding-left: 6px; font-size: 10px; }
+  html[data-theme="bear-tavern"] .we-mode-switch button { padding: 7px 5px; font-size: 9px; }
+  html[data-theme="bear-tavern"] .tt-header-right { gap: 5px; }
+  html[data-theme="bear-tavern"] .tt-header .bt-save-draft { display: none; }
+  html[data-theme="bear-tavern"] .tt-header .tt-small-button { padding: 6px; }
+  html[data-theme="bear-tavern"] .tt-edit-mode .tt-layout { grid-template-columns: 144px minmax(0, 1fr); }
+  .bt-editor-sidebar { font-size: 10px; }
+  .bt-scene-tree, .bt-asset-library { padding-left: 8px; padding-right: 8px; }
+  .bt-sidebar-heading { font-size: 10px; }
+  .bt-asset-grid { gap: 5px; }
+  .bt-asset-preview { height: 55px; }
+  .bt-asset-preview svg { width: 23px; }
+  .bt-asset-preview > b { font-size: 11px; }
+  .bt-asset-name { font-size: 9px; }
+  .bt-asset-categories button { font-size: 8px; padding: 3px 5px; }
+  .bt-sidebar-footer { padding: 8px; }
+  .bt-sidebar-footer > div { flex-direction: column; gap: 5px; }
+  .bt-sidebar-footer button { padding: 7px; }
+  .bt-sidebar-footer > small { font-size: 8px; }
+  .bt-event-dock > header > span { display: none; }
+  .bt-event-dock > header > div button { font-size: 9px; padding: 5px; }
+  .bt-event-dock > header .bt-event-open { padding: 4px; font-size: 8px; }
+  .bt-event-dock > header > button:last-child { padding: 4px; }
+  .bt-event-empty { gap: 7px; flex-wrap: wrap; align-content: center; }
+  .bt-event-empty > svg { display: none; }
+  .bt-event-empty > div { flex-basis: 100%; }
+  .bt-event-empty > button { padding: 4px; }
+  .bt-event-empty p { font-size: 9px; }
+  html[data-theme="bear-tavern"] .tt-play-mode .tt-layout { grid-template-columns: minmax(0, 1fr); }
+  html[data-theme="bear-tavern"] .tt-play-mode .tt-panel { display: none; top: 128px; bottom: 72px; width: min(310px, calc(100vw - 35px)); z-index: 16; box-shadow: -15px 0 40px #0009; }
+  html[data-theme="bear-tavern"] .tt-play-mode .tt-panel.mobile-open { display: flex; }
+  html[data-theme="bear-tavern"] .tt-play-mode .tt-stage-toolbar { padding: 0 10px; }
+  html[data-theme="bear-tavern"] .tt-stage-caption { font-size: 8px; }
+  html[data-theme="bear-tavern"] .tt-stage-caption > span:last-child { display: none; }
+  html[data-theme="bear-tavern"] .tt-handbar { padding: 8px 10px; gap: 9px; }
+  html[data-theme="bear-tavern"] .tt-hand-heading { width: auto; gap: 5px; }
+  html[data-theme="bear-tavern"] .tt-hand-heading > select { max-width: 64px; font-size: 10px; }
+  html[data-theme="bear-tavern"] .tt-hand-hint { display: none; }
+  html[data-theme="bear-tavern"] .tt-hand-empty { font-size: 9px; }
+  html[data-theme="bear-tavern"] .tt-hand-heading > span { font-size: 9px; }
+  .bt-play-action-dock > button { font-size: 10px; padding: 8px; }
+  .bt-play-action-dock kbd { display: none; }
+  html[data-theme="bear-tavern"] .rpg-audio-toggle { bottom: 5px; right: 12px; }
+  html[data-theme="bear-tavern"] .we-editor-footer > span { font-size: 9px; }
+}
+/* Immersive play spans the table at every sidebar breakpoint. */
+html[data-theme="bear-tavern"] .tt-play-mode.tt-play-immersive .tt-layout { grid-template-columns: minmax(0, 1fr); }

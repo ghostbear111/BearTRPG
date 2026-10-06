@@ -1,0 +1,1083 @@
+{
+  "format": "realm-adventure",
+  "version": 1,
+  "definition": {
+    "schemaVersion": 1,
+    "id": "fixture-rpg",
+    "revision": 0,
+    "title": "测试用桌面 RPG",
+    "summary": "两名角色、两场遭遇：装备、修炼、技能范围、治疗、敌方行动与战利品的完整教学局。",
+    "world": {
+      "premise": "远行者与星术师接受遗迹试炼，习得武功，找回遗物。",
+      "history": "",
+      "factions": "",
+      "tone": "开放探索与角色扮演",
+      "gmNotes": ""
+    },
+    "rules": {
+      "name": "坐标剧情 · 武功桌游跑团",
+      "minPlayers": 1,
+      "maxPlayers": 4,
+      "partyDefeat": false
+    },
+    "chapters": [
+      {
+        "id": "rpg-chapter",
+        "title": "世界探索",
+        "summary": "坐标事件、人物对话与嵌套剧情脚本。"
+      }
+    ],
+    "characters": [
+      {
+        "id": "rpg_hero",
+        "name": "岚 · 远行者",
+        "role": "player",
+        "description": "",
+        "secret": "",
+        "maxHp": 120,
+        "color": "#7eabb2"
+      },
+      {
+        "id": "rpg_healer",
+        "name": "烛 · 星术师",
+        "role": "npc",
+        "description": "",
+        "secret": "",
+        "maxHp": 100,
+        "color": "#c99475"
+      }
+    ],
+    "quests": [],
+    "variables": [],
+    "scenes": [
+      {
+        "id": "rpg-world",
+        "chapterId": "rpg-chapter",
+        "title": "星图航线",
+        "description": "点击桌面星图上的地点启航。",
+        "gmNotes": "",
+        "goal": "探索世界，收集1枚遗物。",
+        "ending": "none",
+        "cast": [],
+        "objects": [],
+        "surface": {
+          "width": 24,
+          "depth": 24
+        },
+        "choices": []
+      },
+      {
+        "id": "rpg-map-camp",
+        "chapterId": "rpg-chapter",
+        "title": "遗迹试炼营地",
+        "description": "测试用自定义地点",
+        "gmNotes": "",
+        "goal": "探索世界，收集1枚遗物。",
+        "ending": "none",
+        "cast": [],
+        "objects": [],
+        "surface": {
+          "width": 20,
+          "depth": 16
+        },
+        "gridSize": 1,
+        "choices": []
+      },
+      {
+        "id": "rpg-map-starport",
+        "chapterId": "rpg-chapter",
+        "title": "港口",
+        "description": "测试用自定义地点",
+        "gmNotes": "",
+        "goal": "探索世界，收集1枚遗物。",
+        "ending": "none",
+        "cast": [],
+        "objects": [],
+        "surface": {
+          "width": 20,
+          "depth": 16
+        },
+        "gridSize": 1,
+        "choices": []
+      },
+      {
+        "id": "rpg-map-ruins",
+        "chapterId": "rpg-chapter",
+        "title": "遗迹",
+        "description": "测试用自定义地点",
+        "gmNotes": "",
+        "goal": "探索世界，收集1枚遗物。",
+        "ending": "none",
+        "cast": [],
+        "objects": [],
+        "surface": {
+          "width": 20,
+          "depth": 16
+        },
+        "gridSize": 1,
+        "choices": []
+      },
+      {
+        "id": "rpg-ending",
+        "chapterId": "rpg-chapter",
+        "title": "冒险终章",
+        "description": "你的选择写下了世界的未来。",
+        "gmNotes": "",
+        "goal": "探索世界，收集1枚遗物。",
+        "ending": "victory",
+        "cast": [],
+        "objects": [],
+        "choices": []
+      }
+    ],
+    "startSceneId": "rpg-map-camp",
+    "rpg": {
+      "v": 1,
+      "settings": {
+        "objectiveName": "遗物",
+        "objectiveCount": 1,
+        "initialMoney": 300,
+        "textStyle": "animated"
+      },
+      "roles": {
+        "hero": {
+          "name": "岚 · 远行者",
+          "hp": 120,
+          "ep": 60,
+          "pp": 100,
+          "attack": 14,
+          "defence": 8,
+          "speed": 20,
+          "iq": 60,
+          "blade": 15,
+          "magics": [
+            "training_blade"
+          ],
+          "growth": {
+            "hp": 20,
+            "ep": 8,
+            "attack": 2,
+            "defence": 1,
+            "speed": 1
+          },
+          "brings": [
+            {
+              "id": "training_sword",
+              "n": 1
+            },
+            {
+              "id": "training_armor",
+              "n": 1
+            },
+            {
+              "id": "training_book",
+              "n": 1
+            }
+          ]
+        },
+        "healer": {
+          "name": "烛 · 星术师",
+          "hp": 100,
+          "ep": 80,
+          "attack": 12,
+          "defence": 6,
+          "speed": 18,
+          "iq": 65,
+          "medicine": 15,
+          "psi": 12,
+          "magics": [
+            "training_heal",
+            "training_wave"
+          ],
+          "color": "#c99475"
+        }
+      },
+      "enemies": {
+        "guard": {
+          "name": "试炼守卫",
+          "hp": 65,
+          "ep": 25,
+          "level": 1,
+          "attack": 10,
+          "defence": 5,
+          "speed": 12,
+          "exp": 80,
+          "money": 20,
+          "magics": [
+            "training_punch"
+          ]
+        },
+        "training_boss": {
+          "name": "遗物守护者",
+          "hp": 180,
+          "ep": 60,
+          "level": 3,
+          "attack": 18,
+          "defence": 10,
+          "speed": 16,
+          "exp": 180,
+          "money": 80,
+          "magics": [
+            "training_wave",
+            "training_punch"
+          ],
+          "drops": [
+            {
+              "id": "m_small",
+              "chance": 1
+            }
+          ]
+        }
+      },
+      "items": {
+        "m_small": {
+          "name": "生命药剂",
+          "desc": "恢复队长生命。",
+          "healHP": 30,
+          "price": 20,
+          "type": 3
+        },
+        "training_sword": {
+          "name": "行旅长剑",
+          "type": 1,
+          "price": 50,
+          "addAttack": 8,
+          "desc": "装备后火力增加8，替换装备时旧武器回背包。"
+        },
+        "training_armor": {
+          "name": "轻甲",
+          "type": 2,
+          "price": 40,
+          "addDefence": 4,
+          "desc": "装备后装甲增加4。"
+        },
+        "training_book": {
+          "name": "燕返入门秘籍",
+          "type": 5,
+          "price": 60,
+          "learn": "training_swallow",
+          "needIQ": 40,
+          "needExp": 1,
+          "bonus": {
+            "blade": 5,
+            "attack": 2
+          },
+          "desc": "演示秘籍：开始修炼后赢得一次遭遇即可学会燕返。创作者可调整修炼难度。"
+        },
+        "m_ep": {
+          "name": "能量药剂",
+          "type": 3,
+          "price": 20,
+          "healEP": 35,
+          "desc": "恢复35能量。"
+        }
+      },
+      "magics": {
+        "training_punch": {
+          "name": "基础冲拳",
+          "school": 0,
+          "ept": 2,
+          "area": "point",
+          "dist": 1,
+          "power": 14,
+          "ep": 3,
+          "dicePool": {
+            "dice": [
+              {
+                "sides": 6,
+                "count": 2
+              }
+            ],
+            "mode": "power",
+            "modifier": 0,
+            "multiplier": 1,
+            "successTarget": 4
+          }
+        },
+        "training_blade": {
+          "name": "拔刀斩",
+          "school": 1,
+          "ept": 2,
+          "area": "line",
+          "dist": 3,
+          "power": 18,
+          "ep": 4,
+          "dicePool": {
+            "dice": [
+              {
+                "sides": 8,
+                "count": 2
+              }
+            ],
+            "mode": "sum",
+            "modifier": 0,
+            "multiplier": 1,
+            "successTarget": 4
+          }
+        },
+        "training_swallow": {
+          "name": "燕返",
+          "school": 1,
+          "ept": 2,
+          "area": "cross",
+          "dist": 3,
+          "power": 32,
+          "ep": 8,
+          "dicePool": {
+            "dice": [
+              {
+                "sides": 6,
+                "count": 3,
+                "name": "战斗符号骰",
+                "faces": [
+                  {
+                    "label": "落空",
+                    "symbol": "×",
+                    "value": 0,
+                    "successes": 0,
+                    "effect": "none",
+                    "amount": 0,
+                    "color": "#727976"
+                  },
+                  {
+                    "label": "落空",
+                    "symbol": "×",
+                    "value": 0,
+                    "successes": 0,
+                    "effect": "none",
+                    "amount": 0,
+                    "color": "#727976"
+                  },
+                  {
+                    "label": "命中",
+                    "symbol": "⚔",
+                    "value": 1,
+                    "successes": 1,
+                    "effect": "none",
+                    "amount": 0,
+                    "color": "#d0b984"
+                  },
+                  {
+                    "label": "命中",
+                    "symbol": "⚔",
+                    "value": 1,
+                    "successes": 1,
+                    "effect": "none",
+                    "amount": 0,
+                    "color": "#d0b984"
+                  },
+                  {
+                    "label": "重击",
+                    "symbol": "✦",
+                    "value": 2,
+                    "successes": 2,
+                    "effect": "damage",
+                    "amount": 5,
+                    "color": "#dc9775"
+                  },
+                  {
+                    "label": "防护",
+                    "symbol": "◇",
+                    "value": 1,
+                    "successes": 1,
+                    "effect": "shield",
+                    "amount": 8,
+                    "color": "#81b9ae"
+                  }
+                ]
+              }
+            ],
+            "mode": "success",
+            "modifier": 0,
+            "multiplier": 5,
+            "successTarget": 4
+          }
+        },
+        "training_heal": {
+          "name": "治愈之风",
+          "school": 5,
+          "ept": 2,
+          "area": "point",
+          "dist": 4,
+          "power": 40,
+          "ep": 5,
+          "heal": true,
+          "cure": true,
+          "dicePool": {
+            "dice": [
+              {
+                "sides": 10,
+                "count": 2
+              }
+            ],
+            "mode": "power",
+            "modifier": 0,
+            "multiplier": 1,
+            "successTarget": 4
+          }
+        },
+        "training_wave": {
+          "name": "震荡冲击",
+          "school": 3,
+          "ept": 2,
+          "area": "zone",
+          "dist": 3,
+          "power": 20,
+          "ep": 5,
+          "special": "stun",
+          "dicePool": {
+            "dice": [
+              {
+                "sides": 6,
+                "count": 2
+              },
+              {
+                "sides": 20,
+                "count": 1
+              }
+            ],
+            "mode": "sum",
+            "modifier": 0,
+            "multiplier": 1,
+            "successTarget": 4
+          }
+        }
+      },
+      "shops": {
+        "village": [
+          {
+            "id": "m_small",
+            "price": 20
+          }
+        ]
+      },
+      "world": {
+        "w": 10,
+        "h": 10,
+        "locations": [
+          {
+            "id": "camp",
+            "name": "营地",
+            "x": 1,
+            "y": 1,
+            "desc": "测试用自定义地点"
+          },
+          {
+            "id": "starport",
+            "name": "港口",
+            "x": 6,
+            "y": 4,
+            "desc": "测试用自定义地点"
+          },
+          {
+            "id": "ruins",
+            "name": "遗迹",
+            "x": 8,
+            "y": 7,
+            "desc": "测试用自定义地点"
+          }
+        ]
+      },
+      "maps": {
+        "camp": {
+          "name": "遗迹试炼营地",
+          "w": 16,
+          "h": 12,
+          "tiles": [
+            "################",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "################"
+          ],
+          "entry": {
+            "x": 2,
+            "y": 9
+          },
+          "board": {
+            "cellSize": 1,
+            "color": "#435b68"
+          },
+          "npcs": [
+            {
+              "name": "引路人",
+              "x": 4,
+              "y": 5,
+              "blocking": true,
+              "script": [
+                {
+                  "op": "if",
+                  "cond": {
+                    "cores": 1
+                  },
+                  "then": [
+                    {
+                      "op": "talk",
+                      "name": "引路人",
+                      "text": "你找回了遗物，旅途已经完成。"
+                    },
+                    {
+                      "op": "ending"
+                    }
+                  ],
+                  "else": [
+                    {
+                      "op": "talk",
+                      "name": "引路人",
+                      "text": "东侧的金色标记藏着遗物。走到旁边调查，击败守卫，然后回来找我。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "id": "intro",
+              "x": 2,
+              "y": 8,
+              "trigger": "step",
+              "once": true,
+              "script": [
+                {
+                  "op": "join",
+                  "role": "healer"
+                },
+                {
+                  "op": "talk",
+                  "text": "欢迎参加武功跑团试炼。先在右侧「角色卡」打开共享背包，装备长剑和轻甲，并开始修炼燕返秘籍。走到金色岗哨试炼标记旁按空格进入第一场遭遇。战斗中选技能卡、点目标、预览范围，再按空格掷骰。"
+                }
+              ],
+              "flag": "event_intro"
+            },
+            {
+              "id": "training_gate",
+              "name": "岗哨试炼",
+              "x": 6,
+              "y": 7,
+              "trigger": "interact",
+              "once": true,
+              "flag": "training_passed",
+              "script": [
+                {
+                  "op": "talk",
+                  "text": "试炼守卫就位！每回合先移动，再执行一个动作。箭头和WASD使用本回合的移动步数；敌方会自动行动。"
+                },
+                {
+                  "op": "battle",
+                  "enemies": [
+                    "guard",
+                    "guard"
+                  ],
+                  "onWin": [
+                    {
+                      "op": "heal"
+                    },
+                    {
+                      "op": "talk",
+                      "text": "岗哨试炼完成！已恢复全队资源。若你提前修炼秘籍，现在燕返已进入角色的武功卡。接下来去东侧遗物基座，挑战守护者。"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "training_relic",
+              "x": 11,
+              "y": 5,
+              "trigger": "interact",
+              "once": true,
+              "script": [
+                {
+                  "op": "if",
+                  "cond": {
+                    "flag": "training_passed"
+                  },
+                  "then": [
+                    {
+                      "op": "talk",
+                      "text": "遗物守护者苏醒。利用燕返的十字范围、星术师的区域攻击与治疗，赢得最后一场遭遇。"
+                    },
+                    {
+                      "op": "battle",
+                      "enemies": [
+                        "training_boss"
+                      ],
+                      "onWin": [
+                        {
+                          "op": "core",
+                          "n": 1
+                        },
+                        {
+                          "op": "talk",
+                          "text": "取得遗物！返回引路人旁交付，完成这局跑团。"
+                        }
+                      ]
+                    }
+                  ],
+                  "else": [
+                    {
+                      "op": "talk",
+                      "text": "先完成营地中部的岗哨试炼，再来挑战守护者。"
+                    }
+                  ]
+                }
+              ],
+              "flag": "event_relic",
+              "name": "遗物基座",
+              "ifFlag": "training_passed"
+            }
+          ]
+        },
+        "starport": {
+          "name": "港口",
+          "w": 16,
+          "h": 12,
+          "tiles": [
+            "################",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "################"
+          ],
+          "entry": {
+            "x": 2,
+            "y": 9
+          },
+          "board": {
+            "cellSize": 1,
+            "color": "#435b68"
+          },
+          "npcs": [],
+          "events": []
+        },
+        "ruins": {
+          "name": "遗迹",
+          "w": 16,
+          "h": 12,
+          "tiles": [
+            "################",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "#..............#",
+            "################"
+          ],
+          "entry": {
+            "x": 2,
+            "y": 9
+          },
+          "board": {
+            "cellSize": 1,
+            "color": "#435b68"
+          },
+          "npcs": [],
+          "events": []
+        }
+      }
+    },
+    "tavern": {
+      "version": 1,
+      "archive": {
+        "version": 1,
+        "cards": [
+          {
+            "id": "be3721ef-42fc-447a-9347-922865cea47a",
+            "name": "岚 · 远行者",
+            "title": "",
+            "systemId": "universal",
+            "category": "uncategorized",
+            "presetId": "",
+            "role": "player",
+            "tags": [],
+            "sheet": {
+              "schema": {
+                "id": "bear-rpg-sheet",
+                "version": 1,
+                "name": "桌面 RPG 角色卡",
+                "modules": [
+                  {
+                    "id": "rpg_rules",
+                    "name": "对局资料",
+                    "fields": [
+                      {
+                        "id": "rpg_hp",
+                        "label": "生命",
+                        "type": "resource"
+                      },
+                      {
+                        "id": "rpg_ep",
+                        "label": "能量",
+                        "type": "resource"
+                      },
+                      {
+                        "id": "rpg_pp",
+                        "label": "体力",
+                        "type": "resource"
+                      },
+                      {
+                        "id": "rpg_level",
+                        "label": "等级",
+                        "type": "number"
+                      },
+                      {
+                        "id": "rpg_exp",
+                        "label": "升级经验",
+                        "type": "resource"
+                      },
+                      {
+                        "id": "rpg_attack",
+                        "label": "火力",
+                        "type": "number"
+                      },
+                      {
+                        "id": "rpg_defence",
+                        "label": "装甲",
+                        "type": "number"
+                      },
+                      {
+                        "id": "rpg_speed",
+                        "label": "机动",
+                        "type": "number"
+                      },
+                      {
+                        "id": "rpg_iq",
+                        "label": "资质",
+                        "type": "number"
+                      },
+                      {
+                        "id": "rpg_ept",
+                        "label": "能量谱系",
+                        "type": "text"
+                      },
+                      {
+                        "id": "rpg_weapon",
+                        "label": "武器",
+                        "type": "text"
+                      },
+                      {
+                        "id": "rpg_armor",
+                        "label": "防具",
+                        "type": "text"
+                      },
+                      {
+                        "id": "rpg_magics",
+                        "label": "掌握武功",
+                        "type": "text"
+                      },
+                      {
+                        "id": "rpg_conditions",
+                        "label": "状态",
+                        "type": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "rpg_custom",
+                    "name": "自定义资料",
+                    "fields": [
+                      {
+                        "id": "custom_faction",
+                        "label": "阵营",
+                        "type": "text"
+                      },
+                      {
+                        "id": "custom_species",
+                        "label": "种族",
+                        "type": "text"
+                      },
+                      {
+                        "id": "custom_occupation",
+                        "label": "职业",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "values": {
+                "rpg_hp": {
+                  "value": 120,
+                  "max": 120
+                },
+                "rpg_ep": {
+                  "value": 60,
+                  "max": 60
+                },
+                "rpg_pp": {
+                  "value": 100,
+                  "max": 100
+                },
+                "rpg_level": 1,
+                "rpg_exp": {
+                  "value": 0,
+                  "max": 64
+                },
+                "rpg_attack": 14,
+                "rpg_defence": 8,
+                "rpg_speed": 20,
+                "rpg_iq": 60,
+                "rpg_ept": "通用",
+                "rpg_weapon": "未装备",
+                "rpg_armor": "未装备",
+                "rpg_magics": "拔刀斩 · 第1段",
+                "rpg_conditions": "正常",
+                "custom_faction": "",
+                "custom_species": "",
+                "custom_occupation": ""
+              }
+            },
+            "worldEnabled": true,
+            "status": "active",
+            "portrait": "",
+            "profile": {
+              "player": "",
+              "age": "",
+              "occupation": "",
+              "background": ""
+            },
+            "abilities": {},
+            "resources": {},
+            "skills": [],
+            "inventory": "",
+            "notes": "",
+            "secret": "",
+            "world": {
+              "origin": "",
+              "faction": "",
+              "bond": ""
+            },
+            "createdAt": "2026-10-06T07:14:54.284Z",
+            "updatedAt": "2026-10-06T07:14:54.284Z"
+          },
+          {
+            "id": "8986c598-d84a-4f93-a5f4-870f5edbeb7e",
+            "name": "烛 · 星术师",
+            "title": "",
+            "systemId": "universal",
+            "category": "uncategorized",
+            "presetId": "",
+            "role": "companion",
+            "tags": [],
+            "sheet": {
+              "schema": {
+                "id": "bear-rpg-sheet",
+                "version": 1,
+                "name": "桌面 RPG 角色卡",
+                "modules": [
+                  {
+                    "id": "rpg_rules",
+                    "name": "对局资料",
+                    "fields": [
+                      {
+                        "id": "rpg_hp",
+                        "label": "生命",
+                        "type": "resource"
+                      },
+                      {
+                        "id": "rpg_ep",
+                        "label": "能量",
+                        "type": "resource"
+                      },
+                      {
+                        "id": "rpg_pp",
+                        "label": "体力",
+                        "type": "resource"
+                      },
+                      {
+                        "id": "rpg_level",
+                        "label": "等级",
+                        "type": "number"
+                      },
+                      {
+                        "id": "rpg_exp",
+                        "label": "升级经验",
+                        "type": "resource"
+                      },
+                      {
+                        "id": "rpg_attack",
+                        "label": "火力",
+                        "type": "number"
+                      },
+                      {
+                        "id": "rpg_defence",
+                        "label": "装甲",
+                        "type": "number"
+                      },
+                      {
+                        "id": "rpg_speed",
+                        "label": "机动",
+                        "type": "number"
+                      },
+                      {
+                        "id": "rpg_iq",
+                        "label": "资质",
+                        "type": "number"
+                      },
+                      {
+                        "id": "rpg_ept",
+                        "label": "能量谱系",
+                        "type": "text"
+                      },
+                      {
+                        "id": "rpg_weapon",
+                        "label": "武器",
+                        "type": "text"
+                      },
+                      {
+                        "id": "rpg_armor",
+                        "label": "防具",
+                        "type": "text"
+                      },
+                      {
+                        "id": "rpg_magics",
+                        "label": "掌握武功",
+                        "type": "text"
+                      },
+                      {
+                        "id": "rpg_conditions",
+                        "label": "状态",
+                        "type": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "rpg_custom",
+                    "name": "自定义资料",
+                    "fields": [
+                      {
+                        "id": "custom_faction",
+                        "label": "阵营",
+                        "type": "text"
+                      },
+                      {
+                        "id": "custom_species",
+                        "label": "种族",
+                        "type": "text"
+                      },
+                      {
+                        "id": "custom_occupation",
+                        "label": "职业",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "values": {
+                "rpg_hp": {
+                  "value": 100,
+                  "max": 100
+                },
+                "rpg_ep": {
+                  "value": 80,
+                  "max": 80
+                },
+                "rpg_pp": {
+                  "value": 100,
+                  "max": 100
+                },
+                "rpg_level": 1,
+                "rpg_exp": {
+                  "value": 0,
+                  "max": 64
+                },
+                "rpg_attack": 12,
+                "rpg_defence": 6,
+                "rpg_speed": 18,
+                "rpg_iq": 65,
+                "rpg_ept": "通用",
+                "rpg_weapon": "未装备",
+                "rpg_armor": "未装备",
+                "rpg_magics": "治愈之风 · 第1段、震荡冲击 · 第1段",
+                "rpg_conditions": "正常",
+                "custom_faction": "",
+                "custom_species": "",
+                "custom_occupation": ""
+              }
+            },
+            "worldEnabled": true,
+            "status": "active",
+            "portrait": "",
+            "profile": {
+              "player": "",
+              "age": "",
+              "occupation": "",
+              "background": ""
+            },
+            "abilities": {},
+            "resources": {},
+            "skills": [],
+            "inventory": "",
+            "notes": "",
+            "secret": "",
+            "world": {
+              "origin": "",
+              "faction": "",
+              "bond": ""
+            },
+            "createdAt": "2026-10-06T07:14:54.287Z",
+            "updatedAt": "2026-10-06T07:14:54.287Z"
+          }
+        ],
+        "world": {
+          "name": "熊酒馆",
+          "summary": "",
+          "fields": [
+            {
+              "id": "origin",
+              "label": "出身"
+            },
+            {
+              "id": "faction",
+              "label": "所属势力"
+            },
+            {
+              "id": "bond",
+              "label": "羁绊 / 契约"
+            }
+          ]
+        },
+        "customRules": [],
+        "sheetTemplates": [],
+        "combatRules": {
+          "total": 100,
+          "maxima": {
+            "STRENGTH": 30,
+            "AGILITY": 30,
+            "COMBAT": 30,
+            "ACTION": 30,
+            "DEFENSE": 30,
+            "ACCURACY": 30
+          },
+          "provisional": true
+        }
+      },
+      "bindings": {
+        "rpg_hero": "be3721ef-42fc-447a-9347-922865cea47a",
+        "rpg_healer": "8986c598-d84a-4f93-a5f4-870f5edbeb7e"
+      },
+      "effects": []
+    }
+  }
+}

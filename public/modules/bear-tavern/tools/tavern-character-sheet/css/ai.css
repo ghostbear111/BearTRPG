@@ -1,0 +1,15 @@
+.ai-connection { padding: 16px; margin-bottom: 20px; border: 1px solid var(--paper-border); border-radius: 6px; background: var(--paper-raised); }
+.ai-connection summary { cursor: pointer; font-size: 13px; overflow-wrap: anywhere; }
+.ai-connection[open] summary { margin-bottom: 16px; }
+.ai-apply-bar { position: sticky; bottom: 0; background: var(--paper); padding: 14px 0; }
+.ai-connection-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ai-suggestion { display: flex; align-items: flex-start; gap: 12px; border-top: 1px solid var(--paper-border); padding: 15px 0; cursor: pointer; }
+.ai-suggestion input { flex: 0 0 auto; margin-top: 4px; accent-color: var(--ink); }
+.ai-suggestion-content { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.ai-suggestion p { margin-top: 8px; white-space: pre-wrap; font-size: 13px; line-height: 1.65; }
+.ai-before { color: var(--muted-ink); }
+.ai-after { color: var(--ink); }
+#ai-warnings { white-space: pre-wrap; overflow-wrap: anywhere; }
+#ai-dialog input, #ai-dialog select, #ai-dialog textarea { min-width: 0; max-width: 100%; }
+#ai-dialog button { white-space: normal; }
+@media (max-width: 560px) { .ai-connection { padding: 12px; } .ai-connection .field-grid { grid-template-columns: minmax(0, 1fr); } }

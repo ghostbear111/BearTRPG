@@ -1,0 +1,470 @@
+[
+  {
+    "schemaVersion": 1,
+    "kind": "dice",
+    "name": "战斗符号骰",
+    "description": "落空、命中、重击与防护；在武功骰组中选择成功计数。",
+    "tags": [
+      "骰子",
+      "自定义骰面",
+      "符号骰"
+    ],
+    "listed": true,
+    "template": {
+      "color": "#bc9270",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sides": 6,
+      "value": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {},
+      "diceFaces": [
+        {
+          "label": "落空",
+          "symbol": "×",
+          "value": 0,
+          "successes": 0,
+          "effect": "none",
+          "amount": 0,
+          "color": "#727976"
+        },
+        {
+          "label": "落空",
+          "symbol": "×",
+          "value": 0,
+          "successes": 0,
+          "effect": "none",
+          "amount": 0,
+          "color": "#727976"
+        },
+        {
+          "label": "命中",
+          "symbol": "⚔",
+          "value": 1,
+          "successes": 1,
+          "effect": "none",
+          "amount": 0,
+          "color": "#d0b984"
+        },
+        {
+          "label": "命中",
+          "symbol": "⚔",
+          "value": 1,
+          "successes": 1,
+          "effect": "none",
+          "amount": 0,
+          "color": "#d0b984"
+        },
+        {
+          "label": "重击",
+          "symbol": "✦",
+          "value": 2,
+          "successes": 2,
+          "effect": "damage",
+          "amount": 5,
+          "color": "#dc9775"
+        },
+        {
+          "label": "防护",
+          "symbol": "◇",
+          "value": 1,
+          "successes": 1,
+          "effect": "shield",
+          "amount": 8,
+          "color": "#81b9ae"
+        }
+      ]
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "kind": "dice",
+    "name": "防护符号骰",
+    "description": "适合防护和恢复招式，可逐面修改成功数与效果。",
+    "tags": [
+      "骰子",
+      "自定义骰面",
+      "符号骰"
+    ],
+    "listed": true,
+    "template": {
+      "color": "#82b7ae",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sides": 6,
+      "value": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {},
+      "diceFaces": [
+        {
+          "label": "空白",
+          "symbol": "·",
+          "value": 0,
+          "successes": 0,
+          "effect": "none",
+          "amount": 0,
+          "color": "#a6bbaf"
+        },
+        {
+          "label": "空白",
+          "symbol": "·",
+          "value": 0,
+          "successes": 0,
+          "effect": "none",
+          "amount": 0,
+          "color": "#a6bbaf"
+        },
+        {
+          "label": "格挡",
+          "symbol": "◇",
+          "value": 1,
+          "successes": 1,
+          "effect": "shield",
+          "amount": 8,
+          "color": "#a6bbaf"
+        },
+        {
+          "label": "格挡",
+          "symbol": "◇",
+          "value": 1,
+          "successes": 1,
+          "effect": "shield",
+          "amount": 8,
+          "color": "#a6bbaf"
+        },
+        {
+          "label": "坚壁",
+          "symbol": "◆",
+          "value": 2,
+          "successes": 2,
+          "effect": "shield",
+          "amount": 12,
+          "color": "#a6bbaf"
+        },
+        {
+          "label": "复苏",
+          "symbol": "✚",
+          "value": 1,
+          "successes": 1,
+          "effect": "heal",
+          "amount": 6,
+          "color": "#a6bbaf"
+        }
+      ]
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "kind": "dice",
+    "name": "奥术符号骰",
+    "description": "八面奥术骰，包含伤害、恢复、能量、护盾与停滞。",
+    "tags": [
+      "骰子",
+      "自定义骰面",
+      "符号骰"
+    ],
+    "listed": true,
+    "template": {
+      "color": "#9899bb",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sides": 8,
+      "value": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {},
+      "diceFaces": [
+        {
+          "label": "失控",
+          "symbol": "×",
+          "value": 0,
+          "successes": 0,
+          "effect": "none",
+          "amount": 0,
+          "color": "#a6bbaf"
+        },
+        {
+          "label": "火花",
+          "symbol": "✦",
+          "value": 1,
+          "successes": 1,
+          "effect": "damage",
+          "amount": 2,
+          "color": "#a6bbaf"
+        },
+        {
+          "label": "烈焰",
+          "symbol": "☀",
+          "value": 2,
+          "successes": 1,
+          "effect": "damage",
+          "amount": 5,
+          "color": "#a6bbaf"
+        },
+        {
+          "label": "回响",
+          "symbol": "◎",
+          "value": 2,
+          "successes": 1,
+          "effect": "energy",
+          "amount": 5,
+          "color": "#a6bbaf"
+        },
+        {
+          "label": "屏障",
+          "symbol": "◇",
+          "value": 2,
+          "successes": 1,
+          "effect": "shield",
+          "amount": 8,
+          "color": "#a6bbaf"
+        },
+        {
+          "label": "复苏",
+          "symbol": "✚",
+          "value": 2,
+          "successes": 1,
+          "effect": "heal",
+          "amount": 5,
+          "color": "#a6bbaf"
+        },
+        {
+          "label": "停滞",
+          "symbol": "⌛",
+          "value": 3,
+          "successes": 2,
+          "effect": "stun",
+          "amount": 0,
+          "color": "#a6bbaf"
+        },
+        {
+          "label": "星爆",
+          "symbol": "★",
+          "value": 4,
+          "successes": 2,
+          "effect": "damage",
+          "amount": 10,
+          "color": "#a6bbaf"
+        }
+      ]
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "kind": "dice",
+    "name": "旅途事件骰",
+    "description": "二十个不同事件面，可用作主持人的故事提示，也可加入武功骰组。",
+    "tags": [
+      "骰子",
+      "自定义骰面",
+      "符号骰"
+    ],
+    "listed": true,
+    "template": {
+      "color": "#c8b48e",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sides": 20,
+      "value": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {},
+      "diceFaces": [
+        {
+          "label": "迷途",
+          "symbol": "×",
+          "value": 1,
+          "successes": 0,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "风雨",
+          "symbol": "≈",
+          "value": 2,
+          "successes": 0,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "伏击",
+          "symbol": "⚔",
+          "value": 3,
+          "successes": 0,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "机关",
+          "symbol": "◇",
+          "value": 4,
+          "successes": 0,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "追踪",
+          "symbol": "◎",
+          "value": 5,
+          "successes": 0,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "密道",
+          "symbol": "↗",
+          "value": 6,
+          "successes": 0,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "交易",
+          "symbol": "¤",
+          "value": 7,
+          "successes": 0,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "援手",
+          "symbol": "✚",
+          "value": 8,
+          "successes": 0,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "发现",
+          "symbol": "?",
+          "value": 9,
+          "successes": 0,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "抉择",
+          "symbol": "↔",
+          "value": 10,
+          "successes": 0,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "营地",
+          "symbol": "⌂",
+          "value": 11,
+          "successes": 1,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "线索",
+          "symbol": "!",
+          "value": 12,
+          "successes": 1,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "宝藏",
+          "symbol": "◆",
+          "value": 13,
+          "successes": 1,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "奇遇",
+          "symbol": "✧",
+          "value": 14,
+          "successes": 1,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "祝福",
+          "symbol": "☆",
+          "value": 15,
+          "successes": 1,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "盟友",
+          "symbol": "♡",
+          "value": 16,
+          "successes": 1,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "突破",
+          "symbol": "↑",
+          "value": 17,
+          "successes": 1,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "转机",
+          "symbol": "↻",
+          "value": 18,
+          "successes": 1,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "荣耀",
+          "symbol": "✦",
+          "value": 19,
+          "successes": 1,
+          "effect": "none",
+          "amount": 0
+        },
+        {
+          "label": "传说",
+          "symbol": "★",
+          "value": 20,
+          "successes": 1,
+          "effect": "none",
+          "amount": 0
+        }
+      ]
+    }
+  }
+]

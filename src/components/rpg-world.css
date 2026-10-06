@@ -1,0 +1,8 @@
+.rpg-star-route { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3px 5px; width: max-content; max-width: 116px; padding: 4px 7px; border: 1px solid #8fa5aa40; border-radius: 3px; background: #14212bef; color: #e3ded0; cursor: pointer; font: 11px/1.4 var(--font-body, "Microsoft YaHei", sans-serif); text-align: left; box-shadow: 0 2px 8px #0003; transition: border-color .15s, background .15s; }
+.rpg-star-route > span { overflow-wrap: anywhere; }
+.rpg-star-route > small { grid-column: 1 / -1; color: #91a8b1; font-size: 9px; letter-spacing: .03em; }
+.rpg-star-route.is-current { border-color: #d1ab6c88; color: #efd09e; }.rpg-star-route.is-current > small { color: #c4a671; }
+.rpg-star-route:hover,.rpg-star-route:focus-visible { border-color: #e5bd79; background: #2c3540; outline: 1px solid #e5bd79; outline-offset: 2px; }
+.rpg-star-route:disabled { opacity: .6; cursor: default; }
+@media(max-width:650px) { .rpg-star-route { max-width: 95px; font-size: 10px; padding: 3px 5px; }.rpg-star-route > small { display: none; } }
+.rpg-route-layer { position: absolute; inset: 0; z-index: 6; pointer-events: none; }.rpg-route-anchor { position: absolute; left: 0; top: 0; width: 0; height: 0; visibility: hidden; pointer-events: none; }.rpg-route-anchor > button { position: absolute; pointer-events: auto; }.rpg-route-leader { position: absolute; left: 0; top: 0; height: 1px; background: #c2b38a77; transform-origin: left center; pointer-events: none; }

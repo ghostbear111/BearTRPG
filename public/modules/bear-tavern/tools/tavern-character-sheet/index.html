@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN" data-site-i18n="native" data-tavern-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="熊酒馆角色档案：原创佣兵六项战斗属性、多规则角色卡和可配置的世界观资料。">
+  <meta name="theme-color" content="#10261e">
+  <title>角色档案 · 熊酒馆</title>
+  <link rel="stylesheet" href="./css/character-sheet.css">
+  <link rel="stylesheet" href="./css/universal.css">
+  <link rel="stylesheet" href="./css/universal-integration.css?v=combat-2">
+  <link rel="stylesheet" href="./css/ai.css?v=1">
+  <link rel="stylesheet" href="./css/creator.css?v=2">
+  <link rel="stylesheet" href="./css/library.css?v=1">
+  <link rel="stylesheet" href="../../assets/tabletop-host.css">
+  <script src="../../assets/js/site-language.js"></script>
+  <script defer src="../../assets/js/tavern-brand.js?v=20261006-tavern03"></script>
+  <script defer src="../../assets/js/tavern-bridge.js"></script>
+  <script defer src="./js/universal.js"></script>
+  <script defer src="./js/model.js?v=combat-1"></script>
+  <script defer src="./js/presets.js"></script>
+  <script defer src="./js/universal-ui.js?v=creator-1"></script>
+  <script defer src="./js/ai.js?v=combat-1"></script>
+  <script defer src="./js/ai-ui.js?v=combat-1"></script>
+  <script defer src="./js/creator.js?v=1"></script>
+  <script defer src="./js/creator-ui.js?v=2"></script>
+  <script defer src="./js/library-client.js?v=1"></script>
+  <script defer src="./js/app.js?v=library-1"></script>
+  <link rel="icon" href="../../assets/img/tavern-mark.svg?v=20261006" type="image/svg+xml">
+</head>
+<body data-site-no-translate lang="zh-CN">
+  <a class="skip-link" href="#main">跳到角色档案</a>
+  <div class="app-shell">
+    <aside class="side-rail">
+      <a class="brand" href="../../" aria-label="返回熊酒馆首页"><span class="bear-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="10" cy="11" r="6"/><circle cx="30" cy="11" r="6"/><path d="M5 23C5 5 35 5 35 23c0 16-30 16-30 0Z"/><ellipse cx="20" cy="26" rx="8" ry="6" class="bear-muzzle"/><circle cx="14" cy="20" r="1.4" class="bear-eye"/><circle cx="26" cy="20" r="1.4" class="bear-eye"/><path d="m17 24 3 3 3-3Z" class="bear-eye"/></svg></span><span>熊酒馆<small>BEAR TAVERN</small></span></a>
+      <p class="rail-label">你的冒险桌</p>
+      <nav class="rail-nav" aria-label="档案导航">
+        <button class="rail-item is-active" data-view="active" type="button"><span aria-hidden="true">▤</span>角色档案<span class="rail-count" id="active-count">0</span></button>
+        <button class="rail-item" data-view="archived" type="button"><span aria-hidden="true">⌑</span>归档角色<span class="rail-count" id="archived-count">0</span></button>
+        <button class="rail-item" id="world-open" type="button"><span aria-hidden="true">◇</span>世界观设定</button>
+        <button class="rail-item" id="combat-rules-open" type="button"><span aria-hidden="true">⚖</span>战斗属性规则</button>
+        <button class="rail-item" id="rule-open" type="button"><span aria-hidden="true">⚄</span>自定义规则</button>
+        <button class="rail-item" id="templates-open" type="button"><span aria-hidden="true">▦</span>角色模板库</button>
+      </nav>
+      <div class="rail-world"><span class="small-kicker">原创世界 · MERCENARIES</span><h2 id="rail-world-name">熊酒馆</h2><p>六项属性，一份佣兵档案。<br>让角色的故事在这里延续。</p><span class="world-line" aria-hidden="true"></span><a href="../../workspace.html">前往工具工作台 ↗</a></div>
+      <div class="rail-bottom"><span class="local-dot" aria-hidden="true"></span><span>当前浏览器存档</span><button type="button" id="theme-toggle" aria-label="切换浅色主题">☼</button><p>定期导出备份，带走你的故事。</p></div>
+    </aside>
+    <main class="main-area" id="main">
+      <header class="app-topbar"><p><a href="../../">熊酒馆</a><span>/</span>角色档案</p><div class="toolbar-actions"><button type="button" class="button-quiet" id="import-open">↓ 导入档案</button><button type="button" class="button-quiet" id="backup-export">↑ 备份全部</button><button type="button" class="button-primary" id="create-open"><span aria-hidden="true">＋</span> 新建角色</button></div></header>
+      <section class="page-heading"><div><p class="small-kicker">CHARACTER ARCHIVE / 01</p><h1>角色档案<span class="heading-dot">.</span></h1><p class="page-lead">从酒馆出发，把每一次冒险写进档案。</p></div><div class="heading-note"><span>原创佣兵 · 多种规则</span><p>同一个世界，容得下不同的冒险。</p></div></section>
+      <section class="world-banner" aria-label="熊酒馆原创佣兵规则"><div class="banner-heading"><span class="banner-seal" aria-hidden="true">熊</span><div><span class="small-kicker">熊酒馆原创角色卡</span><h2>佣兵登记处</h2><p>专属六项战斗属性 · 数值由你定义</p></div></div><div class="banner-stats"><span>力量</span><span>灵敏度</span><span>战斗力</span><span>行动力</span><span>防御力</span><span>命中率</span></div><button class="button-outline" type="button" id="mercenary-create">登记佣兵 ↗</button></section>
+      <section class="engine-banner" aria-label="通用角色卡系统"><div><p class="small-kicker">BUILD YOUR OWN CHARACTER SHEET</p><h2>让新规则拥有自己的角色卡。</h2><p>组合模块与十种字段，定义公式与掷骰，保存可复用的角色模板。</p></div><div class="engine-actions"><button class="button-primary" type="button" id="universal-create">创建通用角色</button><button class="button-outline" type="button" id="template-library-open">浏览模板库</button></div></section>
+      <div id="storage-warning" class="notice notice-error" role="alert" hidden></div>
+      <section class="archive-workspace" aria-label="角色档案工作区">
+        <section class="archive-directory" aria-labelledby="directory-title"><div class="section-heading"><h2 id="directory-title">我的角色</h2><span id="directory-count">0 份档案</span></div><label class="search-field"><span class="sr-only">搜索角色</span><span aria-hidden="true">⌕</span><input type="search" id="character-search" placeholder="搜索名字、职业或玩家" autocomplete="off"></label><div class="directory-filters"><label><span class="sr-only">筛选规则</span><select id="system-filter"><option value="all">全部规则</option></select></label><label><span class="sr-only">排序角色</span><select id="sort-filter"><option value="updated">最近更新</option><option value="name">按名字</option></select></label></div><div class="category-filters" id="category-filters" role="group" aria-label="按角色分类筛选"></div><button type="button" class="button-outline starter-entry" id="starter-open">＋ 添加基础档案</button><div class="character-list" id="character-list"></div><p class="directory-footnote">按职业定位分类 · 规则数值独立保存</p></section>
+        <section class="sheet-area" id="sheet-area" aria-label="角色卡内容" data-tavern-brand-preserve></section>
+      </section>
+      <footer class="app-footer"><span>熊酒馆 · 角色档案</span><span>本地版 · 中文界面 · 支持 JSON 备份</span><a href="../../workspace.html">打开工具工作台 ↗</a></footer>
+    </main>
+  </div>
+  <dialog id="create-dialog" class="app-dialog creator-dialog" aria-labelledby="creator-title">
+    <form id="create-form" novalidate>
+      <header class="creator-heading"><div><p class="small-kicker">BEAR TAVERN / A NEW CHAPTER</p><h2 id="creator-title">让你的冒险者登场。</h2><p>选择一个起点，剩下的故事由你决定。<a href="./world.html?new=1" target="_blank" rel="noopener">✦ 从世界创建工坊开始 →</a></p></div><button class="icon-button" type="button" data-close="create-dialog" aria-label="关闭角色创建">×</button></header>
+      <nav id="creator-steps" class="creator-steps" aria-label="创建角色的步骤"></nav>
+      <div class="creator-layout">
+        <div class="creator-workspace">
+          <section class="creator-step" data-creator-step="0" aria-labelledby="creator-rule-title">
+            <p class="creator-kicker">01 / 冒险的起点</p><h3 id="creator-rule-title">先选择你的规则。</h3><p class="creator-copy">熊酒馆佣兵可以直接使用职业原型；其他跑团规则会带入各自的属性与模板。</p>
+            <div id="creator-rules" class="creator-rule-grid" role="group" aria-label="常用规则"></div>
+            <label class="field">使用规则<select name="systemId" id="create-system"></select></label>
+            <label class="field" id="create-template-wrap" hidden>角色模板<select id="create-sheet-template"></select></label>
+            <p class="field-hint" id="create-rule-hint"></p>
+            <label class="checkbox-field"><input type="checkbox" name="worldEnabled" checked>关联熊酒馆世界观字段</label>
+          </section>
+          <section class="creator-step" data-creator-step="1" aria-labelledby="creator-build-title" hidden>
+            <p class="creator-kicker">02 / 找到你的定位</p><h3 id="creator-build-title">选择职业，分配能力。</h3><p id="creator-build-copy" class="creator-copy"></p>
+            <div id="creator-archetypes" class="creator-archetypes" role="group" aria-label="佣兵职业原型"></div>
+            <div id="creator-build-tools" class="creator-build-tools"></div>
+            <div id="creator-budget" class="creator-budget" aria-live="polite"></div>
+            <div id="creator-abilities" class="creator-abilities"></div>
+            <div id="creator-resources" class="field-grid"></div>
+            <div id="creator-universal"></div>
+            <p id="creator-build-note" class="field-hint"></p>
+          </section>
+          <section class="creator-step" data-creator-step="2" aria-labelledby="creator-identity-title" hidden>
+            <p class="creator-kicker">03 / 名字背后的故事</p><h3 id="creator-identity-title">这个角色是谁？</h3><p class="creator-copy" id="creator-identity-copy">职业原型可以带入故事和装备建议。你可以直接使用，也可以把它们改成自己的版本。</p>
+            <div class="field-grid"><label class="field">角色名字<input name="name" id="create-name" required maxlength="100" placeholder="为角色起一个名字" autocomplete="off"></label><label class="field">职业 / 身份<input id="creator-occupation" maxlength="200" placeholder="例如：盾卫、调查员、吟游诗人"></label></div>
+            <div class="field-grid"><label class="field">角色类型<select id="creator-role"></select></label><label class="field">角色分类<select name="category" id="create-category"></select></label></div>
+            <label class="field">一句话介绍<input id="creator-title-text" maxlength="160" placeholder="你的角色会如何介绍自己？"></label>
+            <label class="field">角色背景<textarea id="creator-background" maxlength="20000" rows="3" placeholder="从何而来，为什么开始冒险？"></textarea></label>
+            <label class="field">装备与随身物品<textarea id="creator-inventory" maxlength="20000" rows="3" placeholder="每行一件物品，之后也可以继续补充"></textarea></label>
+            <div id="creator-world" class="field-grid"></div>
+            <details class="creator-extra" id="creator-extra"><summary>更多身份信息与头像（可选）</summary><div class="field-grid"><label class="field">玩家<input id="creator-player" maxlength="100"></label><label class="field">年龄<input id="creator-age" maxlength="40"></label></div><label class="field">角色头像<input id="creator-portrait" type="file" accept="image/png,image/jpeg,image/webp"><span class="field-hint">PNG、JPEG 或 WebP，最大 1 MB。</span></label><button id="creator-remove-portrait" class="button-quiet" type="button">移除头像</button></details>
+          </section>
+          <section class="creator-step" data-creator-step="3" aria-labelledby="creator-review-title" hidden>
+            <p class="creator-kicker">04 / 整装，出发</p><h3 id="creator-review-title">最后看一眼你的角色。</h3><p class="creator-copy">点选下方内容可以返回修改。确认后才会写入角色档案，建档后仍可随时调整。</p>
+            <div id="creator-review" class="creator-review"></div>
+            <div id="creator-review-notes" class="creator-review-notes"></div>
+            <label class="checkbox-field"><input type="checkbox" id="creator-ai-after">建档后打开 AI 辅助填写</label><p class="field-hint">可继续使用 Ollama 或 API 完善角色，并逐项预览建议。</p>
+          </section>
+          <p class="form-error" id="create-error" role="alert"></p>
+        </div>
+        <aside id="creator-preview" class="creator-preview" aria-label="角色实时预览"></aside>
+      </div>
+      <footer class="creator-footer"><span id="creator-progress" role="status"></span><div><button class="button-quiet" type="button" id="creator-back">上一步</button><button class="button-primary" type="button" id="creator-next">下一步 →</button><button class="button-primary" type="submit" id="creator-submit" hidden>建立档案 →</button></div></footer>
+    </form>
+  </dialog>
+  <dialog id="templates-dialog" class="app-dialog dialog-wide"><div class="dialog-heading"><div><p class="small-kicker">REUSABLE RULE TEMPLATES</p><h2>角色模板库</h2></div><button class="icon-button" type="button" data-close="templates-dialog" aria-label="关闭">×</button></div><p class="dialog-lead">从空白、叙事或数值模板开始。每份角色保存自己的模板快照，之后调整模板也会保留已有档案。</p><div id="sheet-template-list" class="template-library"></div><p class="field-hint">可在角色的“通用模块”中设计字段，再另存为模板。JSON 模板可通过“导入档案”导入。</p><div class="dialog-footer"><button class="button-quiet" type="button" data-close="templates-dialog">关闭</button><button class="button-outline" type="button" id="template-import-open">导入模板</button></div></dialog>
+  <dialog id="template-save-dialog" class="app-dialog"><form id="template-save-form"><div class="dialog-heading"><h2>另存为角色模板</h2><button class="icon-button" type="button" data-close="template-save-dialog" aria-label="关闭">×</button></div><p class="dialog-lead">保存字段结构、公式和设计时的默认值。角色填写的内容独立留在当前档案。</p><label class="field">模板名称<input id="template-save-name" required maxlength="100"></label><label class="field">模板版本<input id="template-save-version" type="number" min="1" max="999999" step="1" value="1" required></label><label class="field">模板说明<textarea id="template-save-description" rows="3" maxlength="2000"></textarea></label><p id="template-save-error" class="form-error" role="alert"></p><div class="dialog-footer"><button class="button-quiet" type="button" data-close="template-save-dialog">取消</button><button class="button-primary" type="submit">保存模板</button></div></form></dialog>
+  <dialog id="starter-dialog" class="app-dialog dialog-wide"><div class="dialog-heading"><div><p class="small-kicker">MERCENARY STARTER ARCHIVES</p><h2>佣兵基础档案</h2></div><button class="icon-button" type="button" data-close="starter-dialog" aria-label="关闭">×</button></div><p class="dialog-lead starter-intro">四类定位、八份职业档案。职业、背景、装备和技能可自由修改，六项战斗属性暂为 0，供你按正式规则填写。</p><div class="starter-grid" id="starter-list"></div><p class="field-hint">已有基础卡会自动跳过，改名或归档后也不会重复添加。其他角色会保留。</p><p class="form-error" id="starter-error" role="alert"></p><div class="dialog-footer"><button class="button-quiet" type="button" data-close="starter-dialog">关闭</button><button class="button-primary" type="button" id="starter-add-all">创建基础档案（8份）</button></div></dialog>
+  <dialog id="world-dialog" class="app-dialog dialog-wide"><form id="world-form"><div class="dialog-heading"><div><p class="small-kicker">WORLD SETTING</p><h2>世界观设定</h2></div><button class="icon-button" type="button" data-close="world-dialog" aria-label="关闭">×</button></div><p class="dialog-lead">为不同规则的角色添加同一套世界资料。佣兵的六项战斗属性由原创规则卡单独管理。</p><label class="field">世界名称<input name="worldName" id="world-name" required maxlength="100"></label><label class="field">世界简介<textarea id="world-summary" rows="3" maxlength="5000" placeholder="写下你的世界背景，方便角色创作时查阅。"></textarea></label><div class="section-heading"><h3>角色专属字段</h3><button type="button" class="button-quiet" id="world-add-field">＋ 添加字段</button></div><div id="world-field-list"></div><p class="field-hint">例如出身、所属势力、羁绊。移除字段会隐藏它，已有角色的原始值仍保留在备份中。</p><p class="form-error" id="world-error" role="alert"></p><div class="dialog-footer"><button class="button-quiet" type="button" data-close="world-dialog">取消</button><button class="button-primary" type="submit">保存设定</button></div></form></dialog>
+  <dialog id="rule-dialog" class="app-dialog dialog-wide"><form id="rule-form"><div class="dialog-heading"><div><p class="small-kicker">YOUR OWN RULES</p><h2>自定义规则管理</h2></div><button class="icon-button" type="button" data-close="rule-dialog" aria-label="关闭">×</button></div><p class="dialog-lead">管理规则的创建与清理。内置规则保留；使用中的自定义规则会显示关联角色数量。</p><section><h3>规则清理</h3><div id="rule-library-list" class="template-library"></div><button id="rule-undo" type="button" class="button-outline" hidden>撤销本次清理</button></section><h3>创建新规则</h3><label class="field">规则名称<input id="rule-name" required maxlength="100" placeholder="例如：熊酒馆远征规则"></label><label class="field">属性名称<textarea id="rule-abilities" required rows="3" maxlength="1200" placeholder="每行一个属性，例如：&#10;意志&#10;感知&#10;学识"></textarea></label><label class="field">资源名称（选填）<input id="rule-resources" maxlength="300" placeholder="以逗号分隔，例如：生命,体力,魔力"></label><p class="field-hint">自定义规则是可填写的模板，尚不包含自动掷骰、数值转换或自定计算公式。</p><p class="form-error" id="rule-error" role="alert"></p><div class="dialog-footer"><button class="button-quiet" type="button" data-close="rule-dialog">取消</button><button class="button-primary" type="submit">添加规则</button></div></form></dialog>
+  <dialog id="import-dialog" class="app-dialog dialog-wide"><div class="dialog-heading"><div><p class="small-kicker">BRING YOUR STORIES</p><h2>导入角色档案</h2></div><button class="icon-button" type="button" data-close="import-dialog" aria-label="关闭">×</button></div><p class="dialog-lead">支持本站 JSON 备份、单张角色卡，以及 CCFOLIA 角色 JSON。先检查，再合并；现有角色会保留。</p><label class="field">选择 JSON 文件<input type="file" id="import-file" accept=".json,application/json"></label><label class="field">或粘贴 JSON<textarea id="import-text" rows="7" maxlength="12000000" placeholder="在这里粘贴角色数据"></textarea></label><label class="field">CCFOLIA 导入使用的规则<select id="import-system"></select></label><div id="import-preview" class="import-preview" hidden></div><label class="checkbox-field" id="import-world-option" hidden><input type="checkbox" id="import-world-check">同时使用备份中的世界观设定</label><label class="checkbox-field" id="import-combat-option" hidden><input type="checkbox" id="import-combat-check">同时使用备份中的战斗属性分配规则</label><p id="import-combat-warning" class="form-error" hidden></p><p class="form-error" id="import-error" role="alert"></p><div class="dialog-footer"><button class="button-quiet" type="button" data-close="import-dialog">取消</button><button class="button-outline" type="button" id="import-check">检查数据</button><button class="button-primary" type="button" id="import-confirm" disabled>合并导入</button></div></dialog>
+  <dialog id="confirm-dialog" class="app-dialog"><form id="confirm-form"><div class="dialog-heading"><h2 id="confirm-title">确认操作</h2><button class="icon-button" type="button" data-close="confirm-dialog" aria-label="关闭">×</button></div><p id="confirm-message" class="dialog-lead"></p><div class="dialog-footer"><button class="button-quiet" type="button" data-close="confirm-dialog">取消</button><button class="button-danger" type="submit" id="confirm-action">确认</button></div></form></dialog>
+  <dialog id="ai-dialog" class="app-dialog dialog-wide">
+    <div class="dialog-heading"><div><p class="small-kicker">A LITTLE HELP WITH YOUR NEXT ADVENTURE</p><h2 id="ai-title">AI 辅助填写</h2></div><button class="icon-button" type="button" data-close="ai-dialog" aria-label="关闭">×</button></div>
+    <p class="dialog-lead">写下角色想法，生成身份、故事、属性、技能和模块内容。先查看建议，再勾选应用；公式与模板结构保留。</p>
+    <details class="ai-connection" id="ai-connection-details" open>
+      <summary id="ai-connection-summary">连接设置</summary>
+      <div class="field-grid">
+        <label class="field">填写方式<select id="ai-provider"><option value="ollama">Ollama · 本地模型</option><option value="api">API · 兼容 OpenAI</option></select></label>
+        <label class="field">服务地址<input id="ai-base" type="url" autocomplete="off" spellcheck="false"></label>
+      </div>
+      <p id="ai-connection-hint" class="field-hint"></p>
+      <div id="ai-api-options" hidden>
+        <label class="field">API Key<input id="ai-key" type="password" autocomplete="off" placeholder="仅用于连接你指定的服务"></label>
+        <label class="checkbox-field"><input type="checkbox" id="ai-remember-key">在此浏览器记住 API Key</label>
+        <p class="field-hint">默认仅在本次访问中使用。连接设置和密钥不会进入角色备份。</p>
+      </div>
+      <div class="field-grid">
+        <label class="field">模型名称<input id="ai-model" list="ai-model-list" autocomplete="off" placeholder="读取模型后选择，也可手动输入"><datalist id="ai-model-list"></datalist></label>
+        <div class="ai-connection-actions"><button id="ai-models" type="button" class="button-outline">读取模型 / 测试连接</button><button id="ai-save-settings" type="button" class="button-quiet">保存连接设置</button></div>
+      </div>
+    </details>
+    <label class="field">填写范围<select id="ai-scope"><option value="all">整张角色卡</option><option value="story">身份、背景、装备与世界观</option><option value="stats">属性、资源与技能</option><option value="modules">通用模块字段</option></select></label>
+    <label class="field">角色想法与规则要求<textarea id="ai-brief" rows="4" maxlength="6000" placeholder="例如：一名谨慎的北境斥候，擅长弓箭与追踪，曾失去队友。能力偏灵敏度与命中，强度为新手佣兵。请按我们的桌规给出建议数值。"></textarea></label>
+    <p class="field-hint">将向所选服务发送当前角色的公开身份、所选字段及世界设定。玩家姓名、头像、秘密备注和私有模块不会发送。数值建议请按你的桌规审核。</p>
+    <div class="library-toolbar"><button id="ai-generate" type="button" class="button-primary">生成填写建议</button><button id="ai-cancel" type="button" class="button-outline" hidden>取消生成</button><button id="ai-undo" type="button" class="button-quiet" hidden>撤销本次 AI 填写</button></div>
+    <p id="ai-status" class="field-hint" role="status" aria-live="polite"></p>
+    <section id="ai-preview-section" hidden>
+      <div class="section-heading"><h3>建议预览</h3><span id="ai-selection-count" class="field-hint"></span></div>
+      <p class="field-hint">空白与模板初始值默认勾选。已有内容默认保留，需要替换时请手动勾选。</p>
+      <div class="library-toolbar"><button id="ai-select-empty" type="button" class="button-quiet">仅选择空白 / 初始值</button><button id="ai-select-none" type="button" class="button-quiet">取消全选</button></div>
+      <p id="ai-warnings" class="form-error" hidden></p><p id="ai-budget-status" class="field-hint" role="status" hidden></p><div id="ai-preview"></div>
+      <div class="dialog-footer ai-apply-bar"><button id="ai-apply" type="button" class="button-primary" disabled>应用所选建议</button></div>
+    </section>
+  </dialog>
+  <dialog id="combat-rules-dialog" class="app-dialog dialog-wide">
+    <form id="combat-rule-form">
+      <div class="dialog-heading"><div><p class="small-kicker">MERCENARY POINT ALLOCATION</p><h2>战斗属性分配规则</h2></div><button class="icon-button" type="button" data-close="combat-rules-dialog" aria-label="关闭">×</button></div>
+      <p class="dialog-lead">配置熊酒馆佣兵的六项属性上限与总点数。每项从 0 开始，每增加 1 点消耗 1 点预算；六项直接相加。</p>
+      <label class="field">每名佣兵的总点数预算<input id="combat-total" type="number" min="0" max="5994" step="1" required></label>
+      <h3>各项上限</h3><div id="combat-maxima" class="field-grid"></div>
+      <p class="field-hint">这些是熊酒馆的自定义分配规则，不会改变其他 RPG 的属性范围。修改规则会保留已有角色原值，并标记需要调整的档案。</p>
+      <div id="combat-impact" aria-live="polite"></div><p id="combat-rule-error" class="form-error" role="alert"></p>
+      <div class="dialog-footer"><button class="button-quiet" type="button" data-close="combat-rules-dialog">取消</button><button class="button-primary" type="submit">保存分配规则</button></div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

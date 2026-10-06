@@ -1,0 +1,569 @@
+{
+  "format": "bear-rpg-content",
+  "version": 1,
+  "db": {
+    "v": 1,
+    "settings": {
+      "objectiveName": "遗物",
+      "objectiveCount": 1,
+      "initialMoney": 300,
+      "textStyle": "animated"
+    },
+    "roles": {
+      "hero": {
+        "name": "岚 · 远行者",
+        "hp": 120,
+        "ep": 60,
+        "pp": 100,
+        "attack": 14,
+        "defence": 8,
+        "speed": 20,
+        "iq": 60,
+        "blade": 15,
+        "magics": [
+          "training_blade"
+        ],
+        "growth": {
+          "hp": 20,
+          "ep": 8,
+          "attack": 2,
+          "defence": 1,
+          "speed": 1
+        },
+        "brings": [
+          {
+            "id": "training_sword",
+            "n": 1
+          },
+          {
+            "id": "training_armor",
+            "n": 1
+          },
+          {
+            "id": "training_book",
+            "n": 1
+          }
+        ]
+      },
+      "healer": {
+        "name": "烛 · 星术师",
+        "hp": 100,
+        "ep": 80,
+        "attack": 12,
+        "defence": 6,
+        "speed": 18,
+        "iq": 65,
+        "medicine": 15,
+        "psi": 12,
+        "magics": [
+          "training_heal",
+          "training_wave"
+        ],
+        "color": "#c99475"
+      }
+    },
+    "enemies": {
+      "guard": {
+        "name": "试炼守卫",
+        "hp": 65,
+        "ep": 25,
+        "level": 1,
+        "attack": 10,
+        "defence": 5,
+        "speed": 12,
+        "exp": 80,
+        "money": 20,
+        "magics": [
+          "training_punch"
+        ]
+      },
+      "training_boss": {
+        "name": "遗物守护者",
+        "hp": 180,
+        "ep": 60,
+        "level": 3,
+        "attack": 18,
+        "defence": 10,
+        "speed": 16,
+        "exp": 180,
+        "money": 80,
+        "magics": [
+          "training_wave",
+          "training_punch"
+        ],
+        "drops": [
+          {
+            "id": "m_small",
+            "chance": 1
+          }
+        ]
+      }
+    },
+    "items": {
+      "m_small": {
+        "name": "生命药剂",
+        "desc": "恢复队长生命。",
+        "healHP": 30,
+        "price": 20,
+        "type": 3
+      },
+      "training_sword": {
+        "name": "行旅长剑",
+        "type": 1,
+        "price": 50,
+        "addAttack": 8,
+        "desc": "装备后火力增加8，替换装备时旧武器回背包。"
+      },
+      "training_armor": {
+        "name": "轻甲",
+        "type": 2,
+        "price": 40,
+        "addDefence": 4,
+        "desc": "装备后装甲增加4。"
+      },
+      "training_book": {
+        "name": "燕返入门秘籍",
+        "type": 5,
+        "price": 60,
+        "learn": "training_swallow",
+        "needIQ": 40,
+        "needExp": 1,
+        "bonus": {
+          "blade": 5,
+          "attack": 2
+        },
+        "desc": "演示秘籍：开始修炼后赢得一次遭遇即可学会燕返。创作者可调整修炼难度。"
+      },
+      "m_ep": {
+        "name": "能量药剂",
+        "type": 3,
+        "price": 20,
+        "healEP": 35,
+        "desc": "恢复35能量。"
+      }
+    },
+    "magics": {
+      "training_punch": {
+        "name": "基础冲拳",
+        "school": 0,
+        "ept": 2,
+        "area": "point",
+        "dist": 1,
+        "power": 14,
+        "ep": 3,
+        "dicePool": {
+          "dice": [
+            {
+              "sides": 6,
+              "count": 2
+            }
+          ],
+          "mode": "power",
+          "modifier": 0,
+          "multiplier": 1,
+          "successTarget": 4
+        }
+      },
+      "training_blade": {
+        "name": "拔刀斩",
+        "school": 1,
+        "ept": 2,
+        "area": "line",
+        "dist": 3,
+        "power": 18,
+        "ep": 4,
+        "dicePool": {
+          "dice": [
+            {
+              "sides": 8,
+              "count": 2
+            }
+          ],
+          "mode": "sum",
+          "modifier": 0,
+          "multiplier": 1,
+          "successTarget": 4
+        }
+      },
+      "training_swallow": {
+        "name": "燕返",
+        "school": 1,
+        "ept": 2,
+        "area": "cross",
+        "dist": 3,
+        "power": 32,
+        "ep": 8,
+        "dicePool": {
+          "dice": [
+            {
+              "sides": 6,
+              "count": 3,
+              "name": "战斗符号骰",
+              "faces": [
+                {
+                  "label": "落空",
+                  "symbol": "×",
+                  "value": 0,
+                  "successes": 0,
+                  "effect": "none",
+                  "amount": 0,
+                  "color": "#727976"
+                },
+                {
+                  "label": "落空",
+                  "symbol": "×",
+                  "value": 0,
+                  "successes": 0,
+                  "effect": "none",
+                  "amount": 0,
+                  "color": "#727976"
+                },
+                {
+                  "label": "命中",
+                  "symbol": "⚔",
+                  "value": 1,
+                  "successes": 1,
+                  "effect": "none",
+                  "amount": 0,
+                  "color": "#d0b984"
+                },
+                {
+                  "label": "命中",
+                  "symbol": "⚔",
+                  "value": 1,
+                  "successes": 1,
+                  "effect": "none",
+                  "amount": 0,
+                  "color": "#d0b984"
+                },
+                {
+                  "label": "重击",
+                  "symbol": "✦",
+                  "value": 2,
+                  "successes": 2,
+                  "effect": "damage",
+                  "amount": 5,
+                  "color": "#dc9775"
+                },
+                {
+                  "label": "防护",
+                  "symbol": "◇",
+                  "value": 1,
+                  "successes": 1,
+                  "effect": "shield",
+                  "amount": 8,
+                  "color": "#81b9ae"
+                }
+              ]
+            }
+          ],
+          "mode": "success",
+          "modifier": 0,
+          "multiplier": 5,
+          "successTarget": 4
+        }
+      },
+      "training_heal": {
+        "name": "治愈之风",
+        "school": 5,
+        "ept": 2,
+        "area": "point",
+        "dist": 4,
+        "power": 40,
+        "ep": 5,
+        "heal": true,
+        "cure": true,
+        "dicePool": {
+          "dice": [
+            {
+              "sides": 10,
+              "count": 2
+            }
+          ],
+          "mode": "power",
+          "modifier": 0,
+          "multiplier": 1,
+          "successTarget": 4
+        }
+      },
+      "training_wave": {
+        "name": "震荡冲击",
+        "school": 3,
+        "ept": 2,
+        "area": "zone",
+        "dist": 3,
+        "power": 20,
+        "ep": 5,
+        "special": "stun",
+        "dicePool": {
+          "dice": [
+            {
+              "sides": 6,
+              "count": 2
+            },
+            {
+              "sides": 20,
+              "count": 1
+            }
+          ],
+          "mode": "sum",
+          "modifier": 0,
+          "multiplier": 1,
+          "successTarget": 4
+        }
+      }
+    },
+    "shops": {
+      "village": [
+        {
+          "id": "m_small",
+          "price": 20
+        }
+      ]
+    },
+    "world": {
+      "w": 10,
+      "h": 10,
+      "locations": [
+        {
+          "id": "camp",
+          "name": "营地",
+          "x": 1,
+          "y": 1,
+          "desc": "测试用自定义地点"
+        },
+        {
+          "id": "starport",
+          "name": "港口",
+          "x": 6,
+          "y": 4,
+          "desc": "测试用自定义地点"
+        },
+        {
+          "id": "ruins",
+          "name": "遗迹",
+          "x": 8,
+          "y": 7,
+          "desc": "测试用自定义地点"
+        }
+      ]
+    },
+    "maps": {
+      "camp": {
+        "name": "遗迹试炼营地",
+        "w": 16,
+        "h": 12,
+        "tiles": [
+          "################",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "################"
+        ],
+        "entry": {
+          "x": 2,
+          "y": 9
+        },
+        "board": {
+          "cellSize": 1,
+          "color": "#435b68"
+        },
+        "npcs": [
+          {
+            "name": "引路人",
+            "x": 4,
+            "y": 5,
+            "blocking": true,
+            "script": [
+              {
+                "op": "if",
+                "cond": {
+                  "cores": 1
+                },
+                "then": [
+                  {
+                    "op": "talk",
+                    "name": "引路人",
+                    "text": "你找回了遗物，旅途已经完成。"
+                  },
+                  {
+                    "op": "ending"
+                  }
+                ],
+                "else": [
+                  {
+                    "op": "talk",
+                    "name": "引路人",
+                    "text": "东侧的金色标记藏着遗物。走到旁边调查，击败守卫，然后回来找我。"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "events": [
+          {
+            "id": "intro",
+            "x": 2,
+            "y": 8,
+            "trigger": "step",
+            "once": true,
+            "script": [
+              {
+                "op": "join",
+                "role": "healer"
+              },
+              {
+                "op": "talk",
+                "text": "欢迎参加武功跑团试炼。先在右侧「角色卡」打开共享背包，装备长剑和轻甲，并开始修炼燕返秘籍。走到金色岗哨试炼标记旁按空格进入第一场遭遇。战斗中选技能卡、点目标、预览范围，再按空格掷骰。"
+              }
+            ],
+            "flag": "event_intro"
+          },
+          {
+            "id": "training_gate",
+            "name": "岗哨试炼",
+            "x": 6,
+            "y": 7,
+            "trigger": "interact",
+            "once": true,
+            "flag": "training_passed",
+            "script": [
+              {
+                "op": "talk",
+                "text": "试炼守卫就位！每回合先移动，再执行一个动作。箭头和WASD使用本回合的移动步数；敌方会自动行动。"
+              },
+              {
+                "op": "battle",
+                "enemies": [
+                  "guard",
+                  "guard"
+                ],
+                "onWin": [
+                  {
+                    "op": "heal"
+                  },
+                  {
+                    "op": "talk",
+                    "text": "岗哨试炼完成！已恢复全队资源。若你提前修炼秘籍，现在燕返已进入角色的武功卡。接下来去东侧遗物基座，挑战守护者。"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "training_relic",
+            "x": 11,
+            "y": 5,
+            "trigger": "interact",
+            "once": true,
+            "script": [
+              {
+                "op": "if",
+                "cond": {
+                  "flag": "training_passed"
+                },
+                "then": [
+                  {
+                    "op": "talk",
+                    "text": "遗物守护者苏醒。利用燕返的十字范围、星术师的区域攻击与治疗，赢得最后一场遭遇。"
+                  },
+                  {
+                    "op": "battle",
+                    "enemies": [
+                      "training_boss"
+                    ],
+                    "onWin": [
+                      {
+                        "op": "core",
+                        "n": 1
+                      },
+                      {
+                        "op": "talk",
+                        "text": "取得遗物！返回引路人旁交付，完成这局跑团。"
+                      }
+                    ]
+                  }
+                ],
+                "else": [
+                  {
+                    "op": "talk",
+                    "text": "先完成营地中部的岗哨试炼，再来挑战守护者。"
+                  }
+                ]
+              }
+            ],
+            "flag": "event_relic",
+            "name": "遗物基座",
+            "ifFlag": "training_passed"
+          }
+        ]
+      },
+      "starport": {
+        "name": "港口",
+        "w": 16,
+        "h": 12,
+        "tiles": [
+          "################",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "################"
+        ],
+        "entry": {
+          "x": 2,
+          "y": 9
+        },
+        "board": {
+          "cellSize": 1,
+          "color": "#435b68"
+        },
+        "npcs": [],
+        "events": []
+      },
+      "ruins": {
+        "name": "遗迹",
+        "w": 16,
+        "h": 12,
+        "tiles": [
+          "################",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "#..............#",
+          "################"
+        ],
+        "entry": {
+          "x": 2,
+          "y": 9
+        },
+        "board": {
+          "cellSize": 1,
+          "color": "#435b68"
+        },
+        "npcs": [],
+        "events": []
+      }
+    }
+  }
+}

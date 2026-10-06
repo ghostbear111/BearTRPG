@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="zh-CN" data-site-i18n="native">
+<head>
+  <script src="../../assets/js/site-language.js?v=20261004-zh02"></script>
+  <script src="../../assets/js/tavern-brand.js?v=20261006-tavern03"></script>
+  <script src="../../assets/js/tavern-bridge.js?v=20261006-api01"></script>
+
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>文字图片 APNG 制作器 · 熊酒馆</title>
+  <meta name="description" content="熊酒馆文字动画制作工具：编辑中文文字，搭配字体与动画，为跑团场景生成透明 APNG 素材。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="./css/text-apng-maker.css?v=20261004-zh01" />
+  <link rel="stylesheet" href="./css/tavern-maker.css?v=20261006-tavern01" />
+  <link rel="stylesheet" href="../../assets/tabletop-host.css" />
+  <link rel="icon" href="../../assets/img/tavern-mark.svg?v=20261006" type="image/svg+xml">
+</head>
+<body class="tavern-maker">
+  <div class="app-shell maker-shell">
+    <nav class="maker-topbar" aria-label="熊酒馆工具导航" data-tavern-chrome="hidden">
+      <a class="maker-wordmark" id="portalLink" href="../../"><span class="maker-mark" aria-hidden="true">熊</span><span class="portal-long" id="portalLong">熊酒馆 TRPG 网页工具</span><span class="portal-short" id="portalShort" aria-hidden="true" data-tavern-brand-preserve>熊酒馆</span></a>
+      <div class="maker-topbar-links"><a id="workspaceLink" href="../../workspace.html">工具工作台</a><a id="moduleLink" href="../../apng-embed.html">嵌入调用</a></div>
+    </nav>
+    <header class="app-header maker-header">
+      <div class="title-block">
+        <p class="eyebrow" id="appEyebrow">熊酒馆 TRPG 网页工具</p>
+        <h1 id="appTitle">文字图片 APNG 制作器</h1>
+      </div>
+      <p class="lead" id="appLead">让战斗提示、故事旁白与地点字幕动起来。选择字体和演出，导出透明动画，放入你的跑团场景。</p>
+      <div class="header-actions">
+        <div class="language-switcher" id="languageSwitcher" role="group" aria-label="言語切替">
+          <button class="lang-choice-button is-active" type="button" data-lang-choice="ja" aria-pressed="true">JP</button>
+          <span class="lang-divider" aria-hidden="true">|</span>
+          <button class="lang-choice-button" type="button" data-lang-choice="en" aria-pressed="false">EN</button>
+          <span class="lang-divider" aria-hidden="true">|</span>
+          <button class="lang-choice-button" type="button" data-lang-choice="ko" aria-pressed="false">KR</button>
+          <span class="lang-divider" aria-hidden="true">|</span>
+          <button class="lang-choice-button" type="button" data-lang-choice="zh" aria-pressed="false" lang="zh-CN" aria-label="简体中文">中文</button>
+        </div>
+        <button class="ghost-button" type="button" id="helpBtn" aria-expanded="false" aria-controls="helpDrawer">使い方</button>
+        <span class="header-actions-end">
+          <button class="ghost-button" type="button" id="shortcutBtn" aria-expanded="false" aria-controls="shortcutDrawer">ショートカット</button>
+          <button class="ghost-button theme-button" type="button" id="themeBtn"><span class="theme-toggle-track" aria-hidden="true"><span class="theme-toggle-thumb">☀️</span></span></button>
+        </span>
+        <!-- スマートフォン：ヘッダーを1行にたたんだときに、残りのボタンを出し入れする -->
+        <button class="ghost-button header-menu-button" type="button" id="headerMenuBtn" aria-expanded="false" aria-label="メニュー"><span aria-hidden="true">⋯</span></button>
+        <span class="header-break" aria-hidden="true"></span>
+      </div>
+    </header>
+
+    <section class="drawer" id="helpDrawer" hidden>
+      <h2 id="helpTitle">使い方</h2>
+      <button class="drawer-close" type="button" data-close-drawer aria-label="閉じる">×</button>
+      <div class="guide-list" id="helpList"></div>
+      <div class="guide-notes" id="helpNotes"></div>
+    </section>
+
+    <section class="drawer" id="shortcutDrawer" hidden>
+      <h2 id="shortcutTitle">ショートカット一覧</h2>
+      <button class="drawer-close" type="button" data-close-drawer aria-label="閉じる">×</button>
+      <div class="shortcut-grid" id="shortcutGrid"></div>
+    </section>
+
+    <main class="workspace">
+      <section class="panel control-panel" id="controlPanel" aria-labelledby="appTitle">
+        <!-- スマートフォン：設定パネルは下から引き出すシート。この帯をスワイプ・タップして開け閉めする -->
+        <div class="sheet-bar" id="sheetBar">
+          <span class="sheet-handle" aria-hidden="true"></span>
+          <button class="sheet-toggle" type="button" id="sheetToggle" aria-expanded="false" aria-controls="sheetScroll">
+            <span class="sheet-title" id="sheetTitle">設定</span>
+            <span class="sheet-summary" id="sheetSummary"></span>
+            <span class="sheet-chevron" aria-hidden="true"></span>
+          </button>
+          <button class="sheet-export" type="button" id="sheetExportBtn">書き出し ↓</button>
+        </div>
+        <div class="sheet-scroll" id="sheetScroll">
+        <div class="mode-tabs" id="modeTabs" role="tablist" aria-label="Mode">
+          <button class="mode-tab is-active" type="button" role="tab" data-mode="message" aria-selected="true">
+            <span class="mode-head"><svg class="mode-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4A1.5 1.5 0 0 1 4 14.5v-9A1.5 1.5 0 0 1 5.5 4z" /><path d="M12 7.5v3.6M12 13.4v.1" /></svg><span class="mode-name">メッセージ</span></span>
+            <span class="mode-desc">「戦闘開始」などのカットイン</span>
+          </button>
+          <button class="mode-tab" type="button" role="tab" data-mode="trailer" aria-selected="false" tabindex="-1">
+            <span class="mode-head"><svg class="mode-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="1.5" /><path d="M7.5 4.5v15M16.5 4.5v15M3.5 9.5h4M3.5 14.5h4M16.5 9.5h4M16.5 14.5h4" /></svg><span class="mode-name">トレイラー</span></span>
+            <span class="mode-desc">長めの文章を表示</span>
+          </button>
+          <button class="mode-tab" type="button" role="tab" data-mode="caption" aria-selected="false" tabindex="-1">
+            <span class="mode-head"><svg class="mode-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" /><circle cx="12" cy="10" r="2.3" /></svg><span class="mode-name">場所・時間</span></span>
+            <span class="mode-desc">探索箇所・シーンのテロップ</span>
+          </button>
+        </div>
+
+        <div class="template-block">
+          <div class="template-head">
+            <p class="panel-kicker" id="templatesLabel">テンプレート</p>
+            <button class="link-button" type="button" id="resetModeBtn">↺ 初期化</button>
+          </div>
+          <p class="template-hint" id="templatesHint"></p>
+          <div class="template-groups" id="templateGroups" role="group" hidden></div>
+          <div class="template-systems" id="templateSystems" role="group" hidden></div>
+          <div class="template-strip" id="templateStrip"></div>
+        </div>
+
+        <div class="settings-tabs" id="settingsTabs" role="tablist" aria-label="Settings">
+          <button class="settings-tab is-active" type="button" role="tab" id="tab-text" data-tab="text" aria-selected="true" aria-controls="settingsBody">テキスト</button>
+          <button class="settings-tab" type="button" role="tab" id="tab-font" data-tab="font" aria-selected="false" aria-controls="settingsBody" tabindex="-1">フォント</button>
+          <button class="settings-tab" type="button" role="tab" id="tab-motion" data-tab="motion" aria-selected="false" aria-controls="settingsBody" tabindex="-1">動き</button>
+          <button class="settings-tab" type="button" role="tab" id="tab-style" data-tab="style" aria-selected="false" aria-controls="settingsBody" tabindex="-1">装飾</button>
+          <button class="settings-tab" type="button" role="tab" id="tab-layout" data-tab="layout" aria-selected="false" aria-controls="settingsBody" tabindex="-1">背景・配置</button>
+        </div>
+        <div class="settings-body" id="settingsBody" role="tabpanel"></div>
+        </div>
+      </section>
+
+      <section class="panel preview-panel">
+        <div class="preview-head">
+          <h2 class="panel-title" id="previewTitle">プレビュー</h2>
+          <span class="font-status" id="fontStatus" role="status" hidden></span>
+          <div class="preview-bg" role="group" aria-labelledby="previewBgLabel">
+            <span class="preview-bg-label" id="previewBgLabel">プレビュー背景</span>
+            <div class="chip-group compact" id="previewBgGroup">
+              <button class="chip" type="button" data-bg="checker">透明</button>
+              <button class="chip" type="button" data-bg="dark">黒</button>
+              <button class="chip" type="button" data-bg="light">白</button>
+              <button class="chip" type="button" data-bg="gray">グレー</button>
+              <button class="chip" type="button" data-bg="image">画像</button>
+            </div>
+            <input type="file" id="previewBgFile" accept="image/*" class="visually-hidden" tabindex="-1" aria-hidden="true" />
+          </div>
+        </div>
+
+        <div class="preview-stage-wrap" id="previewStageWrap">
+          <div class="preview-stage" id="previewStage" data-bg="checker">
+            <canvas id="previewCanvas" width="640" height="360"></canvas>
+          </div>
+        </div>
+
+        <div class="transport">
+          <div class="transport-row">
+            <button class="primary-button play-button" type="button" id="playBtn" aria-pressed="false">▶ 再生</button>
+            <button class="icon-button" type="button" id="restartBtn" aria-label="最初から">⟲</button>
+            <div class="transport-toggles">
+              <label class="toggle-inline"><span class="switch"><input type="checkbox" class="switch-input" id="loopPreviewInput" checked /><span class="switch-track" aria-hidden="true"></span></span><span id="loopPreviewText">ループ再生</span></label>
+              <label class="toggle-inline" id="exitToggle"><span class="switch"><input type="checkbox" class="switch-input" id="exitInput" checked /><span class="switch-track" aria-hidden="true"></span></span><span id="exitText">退場あり</span></label>
+            </div>
+            <span class="time-label" id="timeLabel">0.00 / 0.00 秒</span>
+          </div>
+          <div class="timeline" id="timelineSegments">
+            <span class="playhead" aria-hidden="true"></span>
+            <input type="range" class="scrub-input" id="scrubInput" min="0" max="1" step="0.01" value="0" aria-label="Timeline" />
+          </div>
+          <div class="timeline-legend" aria-hidden="true">
+            <span class="legend legend-in" id="legendIn">登場</span>
+            <span class="legend legend-hold" id="legendHold">表示</span>
+            <span class="legend legend-out" id="legendOut">退場</span>
+          </div>
+        </div>
+
+        <div class="export-card" id="exportCard">
+          <div class="export-head">
+            <h2 class="panel-title" id="exportTitle">書き出し</h2>
+            <p class="info-line" id="infoLine"></p>
+          </div>
+          <div class="export-grid">
+            <label class="field compact-field fps-field"><span class="field-label" id="fpsLabel">FPS</span>
+              <select class="select-input" id="fpsSelect">
+                <option value="12">12</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="24">24</option>
+                <option value="30">30</option>
+                <option value="60">60</option>
+              </select>
+            </label>
+            <label class="field compact-field"><span class="field-label" id="loopLabel">ループ</span>
+              <select class="select-input" id="loopSelect">
+                <option value="once">1回再生（最後の状態で停止）</option>
+                <option value="infinite">ずっとループ</option>
+                <option value="count">回数を指定</option>
+              </select>
+            </label>
+            <label class="field compact-field loop-count-field" id="loopCountWrap" hidden><span class="field-label" id="loopCountLabel">回数</span>
+              <input class="number-input" type="number" id="loopCountInput" min="1" max="999" step="1" value="3" />
+            </label>
+            <label class="field compact-field color-mode-field"><span class="field-label" id="colorLabel">色数</span>
+              <select class="select-input" id="colorSelect">
+                <option value="palette">256色（軽量・おすすめ）</option>
+                <option value="full">フルカラー（高画質）</option>
+              </select>
+            </label>
+            <div class="field compact-field wide file-name-field">
+              <div class="field-label-row">
+                <label class="field-label" id="fileNameLabel" for="fileNameInput">ファイル名</label>
+                <span class="file-auto-badge" id="fileNameAutoBadge">設定から自動入力</span>
+                <button class="link-button file-auto-button" type="button" id="fileNameAutoBtn" hidden>↺ 自動入力に戻す</button>
+              </div>
+              <input class="text-input" type="text" id="fileNameInput" spellcheck="false" autocomplete="off" />
+            </div>
+            <label class="toggle-inline wide"><span class="switch"><input type="checkbox" class="switch-input" id="posterInput" checked /><span class="switch-track" aria-hidden="true"></span></span><span id="posterText">APNG非対応の環境では完成状態の静止画を表示</span></label>
+            <label class="toggle-inline wide"><span class="switch"><input type="checkbox" class="switch-input" id="trimInput" /><span class="switch-track" aria-hidden="true"></span></span><span id="trimText">透明な余白を自動でトリミング</span></label>
+          </div>
+          <div class="export-actions">
+            <button class="accent-button export-main" type="button" id="exportApngBtn">APNGを書き出す</button>
+            <button class="ghost-button" type="button" id="exportPngBtn">PNG静止画</button>
+            <button class="ghost-button" type="button" id="exportZipBtn">連番PNG（ZIP）</button>
+          </div>
+          <div class="export-progress" id="exportProgress" hidden><span class="export-progress-bar" id="exportProgressBar"></span></div>
+          <div class="export-status-row">
+            <p class="export-status" id="exportStatus" role="status" aria-live="polite"></p>
+            <button class="clear-button" type="button" id="cancelExportBtn" hidden>中止</button>
+          </div>
+          <div class="export-result" id="exportResult" hidden>
+            <h3 id="resultTitle">書き出し結果</h3>
+            <div class="result-body">
+              <div class="result-preview"><img id="resultImage" alt="" /></div>
+              <div class="result-info">
+                <p class="result-meta" id="resultMeta"></p>
+                <p class="result-note" id="resultNote" hidden></p>
+                <div class="result-actions">
+                  <a class="accent-button download-button" id="downloadLink">ダウンロード</a>
+                  <button class="clear-button" type="button" id="clearResultBtn">クリア</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast-host" id="toastHost" aria-live="polite" aria-atomic="true"></div>
+
+    <footer class="maker-footer" data-tavern-brand-preserve>
+      <p id="makerPrivacy">文字与图片在当前浏览器内处理。</p>
+      <nav aria-label="工具信息"><a id="feedbackLink" href="../../report/" data-tavern-chrome="hidden">问题反馈</a><a id="fontSourceLink" href="../../docs/chinese-fonts.md" target="_blank" rel="noopener">中文字体来源</a></nav>
+    </footer>
+  </div>
+
+  <script src="./js/engine.js?v=20261004-zh01"></script>
+  <script src="./js/fonts.js?v=20261006-tavern01"></script>
+  <script src="./js/apng-encoder.js?v=20261004-zh01"></script>
+  <script src="./js/presets.js?v=20261004-zh01"></script>
+  <script src="./js/i18n.js?v=20261007-tavern02"></script>
+  <script src="./js/controls.js?v=20261006-tavern01"></script>
+  <script src="./js/icons.js?v=20261004-zh01"></script>
+  <script src="./js/render-service.js?v=20261006-tavern01"></script>
+  <script src="./js/main.js?v=20261007-tavern02"></script>
+  <script src="./js/shortcut.js?v=20261004-zh01"></script>
+</body>
+</html>

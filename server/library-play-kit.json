@@ -1,0 +1,1590 @@
+[
+  {
+    "schemaVersion": 1,
+    "name": "宝箱",
+    "description": "可以开启并取出物品，每个宝箱只能取物一次。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "机关"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#a77b4d",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "chest",
+        "behavior": "open",
+        "lootName": "恢复药剂",
+        "lootDescription": "使用后恢复一名角色的 2 点生命。",
+        "lootHeal": 2,
+        "width": 1.6,
+        "height": 1,
+        "depth": 1
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "门",
+    "description": "可开关的门。与机关设置相同的联动标签后，由机关控制。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "机关"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#a77b4d",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "door",
+        "behavior": "open",
+        "width": 1.6,
+        "height": 2.5,
+        "depth": 0.45
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "火把",
+    "description": "可点燃或熄灭的火把。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "机关"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#929284",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "torch",
+        "behavior": "light",
+        "width": 0.5,
+        "height": 2,
+        "depth": 0.5
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "树木",
+    "description": "可拖动、旋转和复制的树木，可以保存自己的版本。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地形"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#688367",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "tree",
+        "width": 1.7,
+        "height": 3,
+        "depth": 1.7
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "岩石",
+    "description": "可拖动、旋转和复制的岩石，可以保存自己的版本。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地形"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#929284",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "rock",
+        "width": 1.25,
+        "height": 1.25,
+        "depth": 1.25
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "石柱",
+    "description": "可拖动、旋转和复制的石柱，可以保存自己的版本。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地形"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#929284",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "pillar",
+        "width": 0.9,
+        "height": 2.6,
+        "depth": 0.9
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "祭坛",
+    "description": "可拖动、旋转和复制的祭坛，可以保存自己的版本。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地形"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#929284",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "altar",
+        "width": 2,
+        "height": 1.3,
+        "depth": 1.6
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "水晶",
+    "description": "可拖动、旋转和复制的水晶，可以保存自己的版本。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地形"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#929284",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "crystal",
+        "width": 1.25,
+        "height": 1.25,
+        "depth": 1.25
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "木桶",
+    "description": "可拖动、旋转和复制的木桶，可以保存自己的版本。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地形"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#a77b4d",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "barrel",
+        "width": 1.25,
+        "height": 1.25,
+        "depth": 1.25
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "木箱",
+    "description": "可拖动、旋转和复制的木箱，可以保存自己的版本。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地形"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#a77b4d",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "crate",
+        "width": 1.25,
+        "height": 1.25,
+        "depth": 1.25
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "桌子",
+    "description": "可拖动、旋转和复制的桌子，可以保存自己的版本。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地形"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#a77b4d",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "table",
+        "width": 2.5,
+        "height": 1.3,
+        "depth": 1.5
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "椅子",
+    "description": "可拖动、旋转和复制的椅子，可以保存自己的版本。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地形"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#a77b4d",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "chair",
+        "width": 1.25,
+        "height": 1.25,
+        "depth": 1.25
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "帐篷",
+    "description": "可拖动、旋转和复制的帐篷，可以保存自己的版本。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地形"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#688367",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "tent",
+        "width": 2.5,
+        "height": 1.8,
+        "depth": 2.3
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "桥",
+    "description": "可拖动、旋转和复制的桥，可以保存自己的版本。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地形"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#a77b4d",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "bridge",
+        "width": 2,
+        "height": 0.45,
+        "depth": 4
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "台阶",
+    "description": "可拖动、旋转和复制的台阶，可以保存自己的版本。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地形"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#929284",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "stairs",
+        "width": 2.5,
+        "height": 1.2,
+        "depth": 2.6
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "水井",
+    "description": "可拖动、旋转和复制的水井，可以保存自己的版本。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地形"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#929284",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "well",
+        "width": 1.25,
+        "height": 1.25,
+        "depth": 1.25
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "喷泉",
+    "description": "可拖动、旋转和复制的喷泉，可以保存自己的版本。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地形"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#929284",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "fountain",
+        "width": 2.3,
+        "height": 1.3,
+        "depth": 2.3
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "机关拉杆",
+    "description": "可以切换，联动同标签的门和灯。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "机关"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#929284",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "lever",
+        "behavior": "switch",
+        "width": 1.25,
+        "height": 1.25,
+        "depth": 1.25
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "拱门",
+    "description": "可拖动、旋转和复制的拱门，可以保存自己的版本。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地形"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#929284",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "gate",
+        "width": 2.7,
+        "height": 2.7,
+        "depth": 0.65
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "火盆",
+    "description": "可点燃或熄灭的火盆。",
+    "kind": "block",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "机关"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#929284",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "brazier",
+        "behavior": "light",
+        "width": 1.25,
+        "height": 1.25,
+        "depth": 1.25
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "战士",
+    "description": "战士棋子，支持生命记录、状态标记及自定义肖像。",
+    "kind": "figurine",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "角色"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#648f9c",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "warrior",
+        "vitality": 6
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "游侠",
+    "description": "游侠棋子，支持生命记录、状态标记及自定义肖像。",
+    "kind": "figurine",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "角色"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#688b70",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "ranger",
+        "vitality": 6
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "法师",
+    "description": "法师棋子，支持生命记录、状态标记及自定义肖像。",
+    "kind": "figurine",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "角色"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#8778ac",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "mage",
+        "vitality": 6
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "盗贼",
+    "description": "盗贼棋子，支持生命记录、状态标记及自定义肖像。",
+    "kind": "figurine",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "角色"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#586577",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "rogue",
+        "vitality": 6
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "祭司",
+    "description": "祭司棋子，支持生命记录、状态标记及自定义肖像。",
+    "kind": "figurine",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "角色"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#c7ba8e",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "cleric",
+        "vitality": 6
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "守卫",
+    "description": "守卫棋子，支持生命记录、状态标记及自定义肖像。",
+    "kind": "figurine",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "角色"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#648f9c",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "guard",
+        "vitality": 6
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "兽人",
+    "description": "兽人棋子，支持生命记录、状态标记及自定义肖像。",
+    "kind": "figurine",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "角色"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#68875c",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "orc",
+        "vitality": 6
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "骷髅",
+    "description": "骷髅棋子，支持生命记录、状态标记及自定义肖像。",
+    "kind": "figurine",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "角色"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#ccc3aa",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "skeleton",
+        "vitality": 6
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "巨蛛",
+    "description": "巨蛛棋子，支持生命记录、状态标记及自定义肖像。",
+    "kind": "figurine",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "角色"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#544957",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "spider",
+        "vitality": 6
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "石像守卫",
+    "description": "石像守卫棋子，支持生命记录、状态标记及自定义肖像。",
+    "kind": "figurine",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "角色"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#8d9188",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "model": "golem",
+        "vitality": 6
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "恢复药剂",
+    "description": "使用后恢复目标 2 点生命。",
+    "kind": "card",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "道具"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#bb9c65",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "item": true,
+        "heal": 2,
+        "consumable": true
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "铜钥匙",
+    "description": "可携带的任务道具；具体开锁条件由游戏规则决定。",
+    "kind": "card",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "道具"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#bb9c65",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "item": true
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "旅行口粮",
+    "description": "可消耗的补给，使用一次后从背包移除。",
+    "kind": "card",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "道具"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#bb9c65",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "item": true,
+        "consumable": true
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "古老卷轴",
+    "description": "收集、查看与传递故事线索。",
+    "kind": "card",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "道具"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#bb9c65",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "item": true
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "铁制长剑",
+    "description": "可装备的物件；攻击与伤害由所选规则决定。",
+    "kind": "card",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "道具"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#bb9c65",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "item": true,
+        "equippable": true
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "宝石袋",
+    "description": "可收集的战利品，交给其他玩家或放回桌面。",
+    "kind": "card",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "道具"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#bb9c65",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "item": true
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "护盾标记",
+    "description": "可自定义计数；规则效果由玩家或游戏指引解释。",
+    "kind": "token",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "标记"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#ac8661",
+      "value": 1,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "symbol": "◇"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "中毒标记",
+    "description": "可自定义计数；规则效果由玩家或游戏指引解释。",
+    "kind": "token",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "标记"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#ac8661",
+      "value": 1,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "symbol": "毒"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "燃烧标记",
+    "description": "可自定义计数；规则效果由玩家或游戏指引解释。",
+    "kind": "token",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "标记"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#ac8661",
+      "value": 1,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "symbol": "焰"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "流血标记",
+    "description": "可自定义计数；规则效果由玩家或游戏指引解释。",
+    "kind": "token",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "标记"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#ac8661",
+      "value": 1,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "symbol": "血"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "眩晕标记",
+    "description": "可自定义计数；规则效果由玩家或游戏指引解释。",
+    "kind": "token",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "标记"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#ac8661",
+      "value": 1,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "symbol": "晕"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "金币标记",
+    "description": "可自定义计数；规则效果由玩家或游戏指引解释。",
+    "kind": "token",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "标记"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#ac8661",
+      "value": 1,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "symbol": "金"
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "石砖地城地图",
+    "description": "可自由布置的石砖地城地板，支持网格与自定义图片。",
+    "kind": "board",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地图"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#838574",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "surface": "stone",
+        "width": 16,
+        "height": 0.1,
+        "depth": 12
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "林地地图",
+    "description": "可自由布置的林地地板，支持网格与自定义图片。",
+    "kind": "board",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地图"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#648062",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "surface": "forest",
+        "width": 16,
+        "height": 0.1,
+        "depth": 12
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "港口木板地图",
+    "description": "可自由布置的港口木板地板，支持网格与自定义图片。",
+    "kind": "board",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地图"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#838574",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "surface": "port",
+        "width": 16,
+        "height": 0.1,
+        "depth": 12
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "雪地地图",
+    "description": "可自由布置的雪地地板，支持网格与自定义图片。",
+    "kind": "board",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地图"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#c4d0cb",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "surface": "snow",
+        "width": 16,
+        "height": 0.1,
+        "depth": 12
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "荒漠地图",
+    "description": "可自由布置的荒漠地板，支持网格与自定义图片。",
+    "kind": "board",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地图"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#b6a079",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "surface": "sand",
+        "width": 16,
+        "height": 0.1,
+        "depth": 12
+      }
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "仪式法阵地图",
+    "description": "可自由布置的仪式法阵地板，支持网格与自定义图片。",
+    "kind": "board",
+    "listed": true,
+    "tags": [
+      "冒险组件",
+      "地图"
+    ],
+    "template": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "color": "#838574",
+      "value": 0,
+      "sides": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {
+        "surface": "ritual",
+        "width": 16,
+        "height": 0.1,
+        "depth": 12
+      }
+    }
+  }
+]

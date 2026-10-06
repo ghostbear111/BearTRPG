@@ -1,0 +1,412 @@
+[
+  {
+    "schemaVersion": 1,
+    "name": "计数标记",
+    "description": "",
+    "tags": [
+      "内置"
+    ],
+    "listed": true,
+    "kind": "token",
+    "template": {
+      "color": "#c2a777",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "sides": 0,
+      "value": 1,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {}
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "棋子",
+    "description": "",
+    "tags": [
+      "内置"
+    ],
+    "listed": true,
+    "kind": "figurine",
+    "template": {
+      "color": "#c2a777",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "sides": 0,
+      "value": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {}
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "六面骰",
+    "description": "",
+    "tags": [
+      "内置"
+    ],
+    "listed": true,
+    "kind": "dice",
+    "template": {
+      "color": "#e4ddcc",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "sides": 6,
+      "value": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {}
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "卡牌",
+    "description": "",
+    "tags": [
+      "内置"
+    ],
+    "listed": true,
+    "kind": "card",
+    "template": {
+      "color": "#c2a777",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "sides": 0,
+      "value": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {}
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "牌堆",
+    "description": "",
+    "tags": [
+      "内置"
+    ],
+    "listed": true,
+    "kind": "deck",
+    "template": {
+      "color": "#41536b",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "sides": 0,
+      "value": 12,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {},
+      "cards": [
+        {
+          "name": "事件 01",
+          "texture": "",
+          "backTexture": "",
+          "description": "通用事件卡。可替换卡面、卡背与说明，用于任意桌面游戏。"
+        },
+        {
+          "name": "事件 02",
+          "texture": "",
+          "backTexture": "",
+          "description": "通用事件卡。可替换卡面、卡背与说明，用于任意桌面游戏。"
+        },
+        {
+          "name": "事件 03",
+          "texture": "",
+          "backTexture": "",
+          "description": "通用事件卡。可替换卡面、卡背与说明，用于任意桌面游戏。"
+        },
+        {
+          "name": "事件 04",
+          "texture": "",
+          "backTexture": "",
+          "description": "通用事件卡。可替换卡面、卡背与说明，用于任意桌面游戏。"
+        },
+        {
+          "name": "事件 05",
+          "texture": "",
+          "backTexture": "",
+          "description": "通用事件卡。可替换卡面、卡背与说明，用于任意桌面游戏。"
+        },
+        {
+          "name": "事件 06",
+          "texture": "",
+          "backTexture": "",
+          "description": "通用事件卡。可替换卡面、卡背与说明，用于任意桌面游戏。"
+        },
+        {
+          "name": "事件 07",
+          "texture": "",
+          "backTexture": "",
+          "description": "通用事件卡。可替换卡面、卡背与说明，用于任意桌面游戏。"
+        },
+        {
+          "name": "事件 08",
+          "texture": "",
+          "backTexture": "",
+          "description": "通用事件卡。可替换卡面、卡背与说明，用于任意桌面游戏。"
+        },
+        {
+          "name": "事件 09",
+          "texture": "",
+          "backTexture": "",
+          "description": "通用事件卡。可替换卡面、卡背与说明，用于任意桌面游戏。"
+        },
+        {
+          "name": "事件 10",
+          "texture": "",
+          "backTexture": "",
+          "description": "通用事件卡。可替换卡面、卡背与说明，用于任意桌面游戏。"
+        },
+        {
+          "name": "事件 11",
+          "texture": "",
+          "backTexture": "",
+          "description": "通用事件卡。可替换卡面、卡背与说明，用于任意桌面游戏。"
+        },
+        {
+          "name": "事件 12",
+          "texture": "",
+          "backTexture": "",
+          "description": "通用事件卡。可替换卡面、卡背与说明，用于任意桌面游戏。"
+        }
+      ]
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "桌面板",
+    "description": "",
+    "tags": [
+      "内置"
+    ],
+    "listed": true,
+    "kind": "board",
+    "template": {
+      "color": "#c2a777",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "sides": 0,
+      "value": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {}
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "场景方块",
+    "description": "",
+    "tags": [
+      "内置"
+    ],
+    "listed": true,
+    "kind": "block",
+    "template": {
+      "color": "#c2a777",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "sides": 0,
+      "value": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {}
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "d4",
+    "description": "",
+    "tags": [
+      "内置"
+    ],
+    "listed": true,
+    "kind": "dice",
+    "template": {
+      "color": "#e4ddcc",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "sides": 4,
+      "value": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {}
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "d8",
+    "description": "",
+    "tags": [
+      "内置"
+    ],
+    "listed": true,
+    "kind": "dice",
+    "template": {
+      "color": "#e4ddcc",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "sides": 8,
+      "value": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {}
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "d10",
+    "description": "",
+    "tags": [
+      "内置"
+    ],
+    "listed": true,
+    "kind": "dice",
+    "template": {
+      "color": "#e4ddcc",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "sides": 10,
+      "value": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {}
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "d12",
+    "description": "",
+    "tags": [
+      "内置"
+    ],
+    "listed": true,
+    "kind": "dice",
+    "template": {
+      "color": "#e4ddcc",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "sides": 12,
+      "value": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {}
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "name": "d20",
+    "description": "",
+    "tags": [
+      "内置"
+    ],
+    "listed": true,
+    "kind": "dice",
+    "template": {
+      "color": "#e4ddcc",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "sides": 20,
+      "value": 0,
+      "texture": "",
+      "backTexture": "",
+      "metadata": {}
+    }
+  }
+]
