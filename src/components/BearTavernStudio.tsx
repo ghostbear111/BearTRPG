@@ -1,3 +1,4 @@
+import { editorAsset } from '../lib/online-editor'
 import { useEffect, useRef, useState } from 'react'
 import { uploadLibraryResource } from '../lib/object-library'
 import { bindingKey, boundCard, characterModel, emptyPresentation, presentationOf, type TavernArchive, type TavernCard, type TavernEffect, type TavernPresentation } from '../lib/tavern-presentation'
@@ -8,8 +9,8 @@ interface ApngAsset { blob: Blob; fileName: string; width: number; height: numbe
 interface ApngMaker { ready: Promise<unknown>; iframe: HTMLIFrameElement; configure(config: object): Promise<unknown>; render(): Promise<ApngAsset>; cancel(): Promise<unknown>; destroy(): void }
 declare global { interface Window { BearTavernApng?: { mount(container: HTMLElement, options: object): ApngMaker } } }
 let sdkPromise: Promise<void> | undefined
-function loadSdk() { return sdkPromise ??= new Promise<void>((resolve, reject) => { const s = document.createElement('script'); s.src = '/modules/bear-tavern/assets/js/apng-client.js'; s.onload = () => resolve(); s.onerror = () => { sdkPromise = undefined; s.remove(); reject(new Error('文字动画模块加载失败。')) }; document.head.appendChild(s) }) }
-const root = '/modules/bear-tavern/'
+function loadSdk() { return sdkPromise ??= new Promise<void>((resolve, reject) => { const s = document.createElement('script'); s.src = editorAsset('/modules/bear-tavern/assets/js/apng-client.js'); s.onload = () => resolve(); s.onerror = () => { sdkPromise = undefined; s.remove(); reject(new Error('文字动画模块加载失败。')) }; document.head.appendChild(s) }) }
+const root = editorAsset('/modules/bear-tavern/')
 
 export default function BearTavernStudio(p: { table: TableSession; selected?: TableObject | null; initialTab: 'characters' | 'text'; onSave: (value: TavernPresentation) => void; onSpawn: (card: TavernCard, kind: 'card' | 'figurine', value: TavernPresentation) => void; onPlay: (effect: TavernEffect) => void; onClose: () => void }) {
   const [tab, setTab] = useState(p.initialTab), [ready, setReady] = useState(false), [busy, setBusy] = useState(false), [status, setStatus] = useState('正在准备工具…')

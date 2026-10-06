@@ -1,3 +1,4 @@
+import { editorAsset } from './online-editor'
 import { rpgTextConfig, type RpgTextCue } from './rpg-text-presentation'
 
 interface ApngRender { blob: Blob; duration: number; width: number; height: number; frames: number }
@@ -17,7 +18,7 @@ export function loadTavernApng(): Promise<ApngService> {
     for (const name of ['presets', 'fonts', 'engine', 'apng-encoder', 'render-service']) {
       await new Promise<void>((resolve, reject) => {
         const tag = document.createElement('script')
-        tag.src = `/modules/bear-tavern/tools/text-apng-maker/js/${name}.js`
+        tag.src = editorAsset(`/modules/bear-tavern/tools/text-apng-maker/js/${name}.js`)
         tag.async = false
         tag.onload = () => resolve()
         tag.onerror = () => { tag.remove(); reject(new Error('文字演出素材读取失败。')) }
